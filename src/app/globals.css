@@ -189,8 +189,10 @@ img {
 }
 
 /* Hero cards grid */
-.hero-cards-grid {
-  grid-template-columns: 1fr 1fr 1fr;
+@layer base {
+  .hero-cards-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 /* Responsive */

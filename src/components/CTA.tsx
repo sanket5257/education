@@ -49,6 +49,7 @@ export default function CTA() {
           }}
         >
           {/* Background Video */}
+          <div className="absolute inset-0 bg-bg-dark" />
           <video
             autoPlay
             muted
