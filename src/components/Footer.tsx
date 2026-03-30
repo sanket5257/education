@@ -49,11 +49,7 @@ export default function Footer() {
     >
       {/* Main footer content */}
       <div
-        style={{
-          padding: "64px 24px",
-          maxWidth: 1428,
-          margin: "0 auto",
-        }}
+        className="px-4 py-10 md:px-6 md:py-16 mx-auto max-w-[1428px]"
       >
         {/* ── Top Banner ── */}
         <div
@@ -66,9 +62,9 @@ export default function Footer() {
           {/* Left: Text + Button */}
           <div className="flex flex-col gap-6" style={{ maxWidth: 520 }}>
             <p
+              className="text-[18px] md:text-[24px]"
               style={{
                 fontFamily: "var(--font-body)",
-                fontSize: 24,
                 lineHeight: 1.4,
                 color: "#FFFFFF",
               }}
@@ -251,7 +247,7 @@ export default function Footer() {
               >
                 Subscribe to our newsletter
               </p>
-              <form onSubmit={handleSubmit} className="flex gap-2">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   placeholder="Email Address"

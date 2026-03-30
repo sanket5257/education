@@ -72,14 +72,9 @@ export default function SuccessStories() {
           <span className="section-label mb-4 block">Parent Voices</span>
 
           <h2
-            className="mb-4"
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: 56,
-              lineHeight: 1.1,
-            }}
+            className="mb-4 font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1]"
           >
-            <em style={{ fontStyle: "italic" }}>Voices</em>{" "}
+            <em className="italic">Voices</em>{" "}
             From Our Parents
           </h2>
 

@@ -56,7 +56,7 @@ export default function Services() {
           {/* LEFT column */}
           <div className="flex flex-col gap-4 lg:w-[35%] lg:sticky lg:top-32">
             <span className="section-label">What We Offer</span>
-            <p className="font-heading text-[22px] leading-[1.4] text-text-primary">
+            <p className="font-heading text-[18px] md:text-[22px] leading-[1.4] text-text-primary">
               Vidya Bharati International School provides a well-rounded Indian
               education designed to nurture every student&apos;s potential, from
               the classroom to the playing field and beyond.
@@ -69,31 +69,31 @@ export default function Services() {
               <Link
                 key={service.heading}
                 href={service.href}
-                className="flex items-center gap-5 rounded-[6px] bg-bg-secondary p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                className="flex items-center gap-3 md:gap-5 rounded-[6px] bg-bg-secondary p-4 md:p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
               >
                 {/* Icon */}
                 <div className="shrink-0">
                   <Image
                     src={service.icon}
                     alt={service.heading}
-                    width={60}
-                    height={60}
+                    width={48}
+                    height={48}
                     className="rounded-full"
                   />
                 </div>
 
                 {/* Text */}
                 <div className="flex min-w-0 flex-1 flex-col gap-1">
-                  <h2 className="font-heading text-[28px] leading-[1.2] text-text-primary">
+                  <h2 className="font-heading text-[20px] md:text-[24px] lg:text-[28px] leading-[1.2] text-text-primary">
                     {service.heading}
                   </h2>
-                  <p className="text-sm text-text-muted">
+                  <p className="text-xs md:text-sm text-text-muted">
                     {service.subtext}
                   </p>
                 </div>
 
                 {/* Arrow link */}
-                <div className="flex shrink-0 items-center gap-2 text-sm font-medium text-text-primary">
+                <div className="hidden sm:flex shrink-0 items-center gap-2 text-sm font-medium text-text-primary">
                   <span>{service.linkText}</span>
                   <Image
                     src="/images/icons/arrow-right.svg"

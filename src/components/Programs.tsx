@@ -78,18 +78,14 @@ export default function Programs() {
     >
       <div className="container">
         {/* Header */}
-        <div className="programs-header flex flex-col gap-6 lg:flex-row lg:gap-16 mb-12">
+        <div className="programs-header flex flex-col gap-6 lg:flex-row lg:gap-16 mb-8 md:mb-12">
           <div className="lg:w-1/2 flex flex-col gap-4">
             <span className="section-label">academics</span>
             <h2
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: 56,
-                lineHeight: 1.1,
-              }}
+              className="font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1]"
             >
               Explore Our{" "}
-              <em style={{ fontStyle: "italic" }}>Academic</em> Programs
+              <em className="italic">Academic</em> Programs
             </h2>
           </div>
           <div className="lg:w-1/2 flex items-end">

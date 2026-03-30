@@ -45,7 +45,7 @@ export default function CTA() {
         <div
           className="rounded-[12px] flex flex-col items-center text-center relative overflow-hidden"
           style={{
-            padding: "64px 32px",
+            padding: "clamp(32px, 8vw, 64px) clamp(16px, 4vw, 32px)",
           }}
         >
           {/* Background Video */}
@@ -99,17 +99,13 @@ export default function CTA() {
 
           {/* Heading */}
           <h2
-            className="cta-animate mb-5"
+            className="cta-animate mb-5 font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1] max-w-[600px]"
             style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: 56,
-              lineHeight: 1.1,
               color: "var(--color-text-light)",
-              maxWidth: 600,
             }}
           >
             Begin your child&apos;s{" "}
-            <em style={{ fontStyle: "italic" }}>journey</em>, today.
+            <em className="italic">journey</em>, today.
           </h2>
 
           {/* Description */}
@@ -127,7 +123,7 @@ export default function CTA() {
           </p>
 
           {/* Buttons */}
-          <div className="cta-animate flex items-center gap-3">
+          <div className="cta-animate flex flex-col sm:flex-row items-center gap-3">
             <Button variant="primary" href="#admissions">
               Apply Now
             </Button>

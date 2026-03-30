@@ -95,13 +95,9 @@ export default function About() {
           <div className="pt-2" />
 
           <h2
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: 56,
-              lineHeight: 1.1,
-            }}
+            className="font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1]"
           >
-            <em style={{ fontStyle: "italic" }}>Our Story</em>
+            <em className="italic">Our Story</em>
             {" "}&amp; Mission
           </h2>
 

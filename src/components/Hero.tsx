@@ -60,7 +60,7 @@ export default function Hero() {
 
           <h1
             data-hero-heading
-            className="mb-4 max-w-[896px] font-heading text-[56px] font-normal leading-[1.1] text-text-primary"
+            className="mb-4 max-w-[896px] font-heading text-[32px] md:text-[40px] lg:text-[56px] font-normal leading-[1.1] text-text-primary"
           >
             Where Knowledge Meets Values,{" "}
             <em className="font-heading italic">Futures</em> Take Shape
@@ -132,7 +132,7 @@ export default function Hero() {
           {/* 1 - Dark quote card */}
           <div
             data-hero-card
-            className="flex min-h-[500px] flex-col justify-between rounded-[6px] bg-bg-dark p-6"
+            className="flex min-h-[300px] md:min-h-[500px] flex-col justify-between rounded-[6px] bg-bg-dark p-6"
           >
             <p className="mb-6 font-body text-base leading-[1.7] text-white/85">
               &ldquo;Every child who walks through our doors carries a spark of
@@ -168,7 +168,7 @@ export default function Hero() {
           {/* 2 - Video card */}
           <div
             data-hero-card
-            className="relative min-h-[500px] overflow-hidden rounded-[6px]"
+            className="relative min-h-[300px] md:min-h-[500px] overflow-hidden rounded-[6px]"
           >
             <video
               autoPlay
@@ -184,7 +184,7 @@ export default function Hero() {
           {/* 3 - Gradient stat card */}
           <div
             data-hero-card
-            className="relative flex min-h-[500px] flex-col justify-end overflow-hidden rounded-[6px] p-5"
+            className="relative flex min-h-[300px] md:min-h-[500px] flex-col justify-end overflow-hidden rounded-[6px] p-5"
           >
             <Image
               src="https://i.pinimg.com/1200x/b6/d2/69/b6d26991c26a90cae062acc789327266.jpg"
@@ -196,7 +196,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-black/10" />
 
             <div className="relative z-10 rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl">
-              <p className="mb-2 font-heading text-[120px] font-semibold leading-none text-white">
+              <p className="mb-2 font-heading text-[60px] md:text-[80px] lg:text-[120px] font-semibold leading-none text-white">
                 96%
               </p>
               <p className="text-sm leading-[1.5] text-white/90">

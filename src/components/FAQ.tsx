@@ -80,16 +80,12 @@ export default function FAQ() {
     >
       <div style={{ maxWidth: 1072, margin: "0 auto", width: "100%" }}>
         {/* Centered Header */}
-        <div className="faq-header flex flex-col items-center text-center gap-4 mb-14">
+        <div className="faq-header flex flex-col items-center text-center gap-4 mb-8 md:mb-14">
           <span className="section-label">FAQ</span>
           <h2
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: 56,
-              lineHeight: 1.1,
-            }}
+            className="font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1]"
           >
-            Your <em style={{ fontStyle: "italic" }}>questions</em> answered.
+            Your <em className="italic">questions</em> answered.
           </h2>
           <p
             style={{
@@ -120,9 +116,8 @@ export default function FAQ() {
                 aria-expanded={openIndex === index}
               >
                 <span
-                  className="text-left font-medium"
+                  className="text-left font-medium text-[15px] md:text-[18px]"
                   style={{
-                    fontSize: 18,
                     color: "var(--color-text-primary)",
                   }}
                 >

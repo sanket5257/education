@@ -88,18 +88,13 @@ export default function Benefits() {
     >
       <div className="container">
         {/* Header */}
-        <div className="benefits-header mb-16 text-center max-w-[700px] mx-auto">
+        <div className="benefits-header mb-8 md:mb-16 text-center max-w-[700px] mx-auto">
           <span className="section-label mb-3 block">Why Vidya Bharati</span>
           <h2
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: 56,
-              lineHeight: 1.1,
-              marginBottom: 16,
-            }}
+            className="font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1] mb-4"
           >
             Built for{" "}
-            <em style={{ fontStyle: "italic" }}>student</em> success.
+            <em className="italic">student</em> success.
           </h2>
           <p
             style={{
@@ -115,11 +110,11 @@ export default function Benefits() {
         </div>
 
         {/* Feature Cards */}
-        <div className="benefits-features grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="benefits-features grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="benefits-feature rounded-[12px] p-8 flex flex-col items-center text-center"
+              className="benefits-feature rounded-[12px] p-5 md:p-8 flex flex-col items-center text-center"
               style={{
                 backgroundColor: "var(--color-bg-primary)",
                 border: "0.8px solid var(--color-border-light)",
@@ -137,12 +132,7 @@ export default function Benefits() {
                 />
               </div>
               <h3
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  fontSize: 24,
-                  lineHeight: 1.3,
-                  marginBottom: 8,
-                }}
+                className="font-heading text-[20px] md:text-[24px] leading-[1.3] mb-2"
               >
                 {feature.title}
               </h3>
@@ -164,18 +154,15 @@ export default function Benefits() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="benefits-stat rounded-[12px] p-6 text-center"
+              className="benefits-stat rounded-[12px] p-4 md:p-6 text-center"
               style={{
                 backgroundColor: "var(--color-bg-dark)",
               }}
             >
               <p
+                className="font-heading text-[24px] md:text-[36px] leading-[1.1] mb-1"
                 style={{
-                  fontFamily: "var(--font-heading)",
-                  fontSize: 36,
-                  lineHeight: 1.1,
                   color: "var(--color-text-light)",
-                  marginBottom: 4,
                 }}
               >
                 {stat.value}
