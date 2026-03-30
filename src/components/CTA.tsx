@@ -14,6 +14,7 @@ const avatarSrcs = [
 
 export default function CTA() {
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -31,7 +32,24 @@ export default function CTA() {
       });
     }, sectionRef);
 
-    return () => ctx.revert();
+    // Play video when it scrolls into view
+    const video = videoRef.current;
+    if (!video) return () => ctx.revert();
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(video);
+
+    return () => {
+      ctx.revert();
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -51,10 +69,12 @@ export default function CTA() {
           {/* Background Video */}
           <div className="absolute inset-0 bg-bg-dark" />
           <video
+            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
+            preload="auto"
             className="absolute inset-0 h-full w-full object-cover"
           >
             <source src="/images/hero-video.mp4" type="video/mp4" />
