@@ -75,16 +75,53 @@ export default function About() {
   return (
     <section id="about" ref={sectionRef} className="section-padding">
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Left Column - Image */}
+        {/* Left Column - Image composition */}
         <div
           ref={imageRef}
-          className="relative min-h-[400px] md:min-h-[500px]"
+          className="relative"
+          style={{ overflow: "visible" }}
         >
+          {/* Main photo - offset left 10%, 90% width like reference */}
+          <div
+            className="relative ml-12 overflow-hidden"
+            style={{ borderRadius: 32, aspectRatio: "598 / 700", width: "80%" }}
+          >
+            <Image
+              src="/images/lifestyle/about-hero.jpg"
+              alt="Students at Vidya Bharati International School"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Drawing - top right, rotated 12deg clockwise */}
           <Image
-            src="/images/lifestyle/about-hero.jpg"
-            alt="Students at Vidya Bharati International School"
-            fill
-            className="object-cover rounded-[6px]"
+            src="/images/about/drawing.webp"
+            alt="Child's drawing"
+            width={200}
+            height={200}
+            className="absolute hidden lg:block pointer-events-none"
+            style={{ top: "-10%", left: "62%", width: "40%", height: "auto", transform: "rotate(-15deg)" }}
+          />
+
+          {/* Pink SVG - bottom right, extending below */}
+          <Image
+            src="/images/about/story-pink.svg"
+            alt=""
+            width={300}
+            height={307}
+            className="absolute hidden lg:block pointer-events-none"
+            style={{ bottom: "-14%", left: "68%", width: "45%", height: "auto" }}
+          />
+
+          {/* Light SVG - bottom left */}
+          <Image
+            src="/images/about/light-story.svg"
+            alt=""
+            width={160}
+            height={160}
+            className="absolute hidden lg:block pointer-events-none"
+            style={{ bottom: "-2%", left: "0%", width: "24%", height: "auto" }}
           />
         </div>
 

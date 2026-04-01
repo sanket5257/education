@@ -45,6 +45,10 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
       style={{
         backgroundColor: "#222222",
         color: "#FFFDF9",
+        backgroundImage: "url('https://cdn.prod.website-files.com/68b824698be8e7c047a5da51/68d146cd1071e5af0979534f_aventiva-footer-one-background.avif')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Main footer content */}

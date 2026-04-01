@@ -33,11 +33,10 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
         scrollTrigger: { trigger: "[data-hero-cards]", start: "top 85%", toggleActions: "play none none none" },
       });
 
-      // Video section: sits below hero as its own section, but initially
-      // scaled down and translated up to look like the middle card.
+      // Video animation: desktop only (lg breakpoint)
       const video = videoRef.current;
       const cardsRow = document.querySelector("[data-hero-cards]") as HTMLElement;
-      if (!video || !cardsRow) return;
+      if (!video || !cardsRow || window.innerWidth < 1024) return;
 
       const cardsH = cardsRow.offsetHeight;
       const videoH = video.offsetHeight;
@@ -63,7 +62,6 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
       });
 
       // Phase 1: move down, Phase 2: expand
-      // Animation plays as the video section scrolls into view
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "[data-video-section]",
