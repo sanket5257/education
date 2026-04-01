@@ -1,16 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/animations";
 import Button from "@/components/Button";
-
-const avatarSrcs = [
-  "/images/people/people1.avif",
-  "/images/people/people6.avif",
-  "/images/people/people3.avif",
-  "/images/people/people5.avif",
-];
 
 export default function CTA({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -83,41 +75,6 @@ export default function CTA({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
 
           {/* Content - above video */}
           <div className="relative z-10 flex flex-col items-center">
-          {/* Avatar stack */}
-          <div className="cta-animate flex items-center mb-4">
-            {avatarSrcs.map((src, i) => (
-              <div
-                key={src}
-                className="relative overflow-hidden rounded-full border-2"
-                style={{
-                  width: 40,
-                  height: 40,
-                  marginLeft: i === 0 ? 0 : -8,
-                  borderColor: "var(--color-bg-dark)",
-                  zIndex: avatarSrcs.length - i,
-                }}
-              >
-                <Image
-                  src={src}
-                  alt={`Student ${i + 1}`}
-                  fill
-                  sizes="40px"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-
-          <span
-            className="cta-animate mb-6"
-            style={{
-              fontSize: 14,
-              color: "rgba(255, 255, 255, 0.5)",
-            }}
-          >
-            1200+ Students Enrolled
-          </span>
-
           {/* Heading */}
           <h2
             className="cta-animate mb-5 font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1] max-w-[600px]"

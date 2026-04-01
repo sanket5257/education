@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { gsap } from "@/lib/animations";
+import { gsap, ScrollTrigger } from "@/lib/animations";
 
 const toppers = [
   { name: "Priya Mehta", score: "98.4%", stream: "Science", year: "2025", image: "/images/people/people1.avif" },
@@ -30,22 +30,28 @@ export default function Achievements() {
         },
       });
 
-      // GSAP marquee for toppers
+    }, sectionRef);
+
+    // Marquee: run outside context so it's independent
+    let marqueeTween: gsap.core.Tween | null = null;
+    const timer = setTimeout(() => {
       if (marqueeRef.current) {
         const track = marqueeRef.current;
-        const totalWidth = track.scrollWidth / 2;
-
-        gsap.set(track, { x: 0 });
-        gsap.to(track, {
-          x: -totalWidth,
-          duration: 30,
+        const half = track.scrollWidth / 2;
+        marqueeTween = gsap.to(track, {
+          x: -half,
+          duration: 25,
           ease: "none",
           repeat: -1,
         });
       }
-    }, sectionRef);
+    }, 100);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      clearTimeout(timer);
+      marqueeTween?.kill();
+    };
   }, []);
 
   return (
@@ -95,7 +101,7 @@ export default function Achievements() {
           </h3>
           <div className="overflow-hidden">
             <div ref={marqueeRef} className="flex whitespace-nowrap">
-              {[...toppers, ...toppers, ...toppers, ...toppers].map((topper, i) => (
+              {[...toppers, ...toppers].map((topper, i) => (
                 <div
                   key={`${topper.name}-${i}`}
                   className="shrink-0 w-[220px] md:w-[260px] mx-2 rounded-[8px] overflow-hidden bg-white whitespace-normal"
