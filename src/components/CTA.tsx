@@ -12,7 +12,7 @@ const avatarSrcs = [
   "/images/people/people5.avif",
 ];
 
-export default function CTA() {
+export default function CTA({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -145,10 +145,10 @@ export default function CTA() {
 
           {/* Buttons */}
           <div className="cta-animate flex flex-col sm:flex-row items-center gap-3">
-            <Button variant="primary" href="#admissions">
+            <Button variant="primary" onClick={onEnquiryOpen}>
               Apply Now
             </Button>
-            <Button variant="primary" href="#contact">
+            <Button variant="primary" onClick={onEnquiryOpen}>
               Contact Us
             </Button>
           </div>

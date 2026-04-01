@@ -9,12 +9,11 @@ const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Programs", href: "#programs" },
-  { label: "Why Us", href: "#benefits" },
-  { label: "Testimonials", href: "#stories" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Results", href: "#achievements" },
+  { label: "Gallery", href: "#gallery" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -22,7 +21,14 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-[1428px] items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="shrink-0 flex items-center gap-2">
-          <span className="text-xl font-bold   font-heading tracking-tight text-text-primary">
+          <Image
+            src="https://static.vecteezy.com/system/resources/previews/046/487/447/non_2x/education-logo-illustration-black-and-white-free-vector.jpg"
+            alt="Vidya Bharati Logo"
+            width={60}
+            height={60}
+            className="object-contain"
+          />
+          <span className="text-xl font-bold font-heading tracking-tight text-text-primary">
             Vidya Bharati
           </span>
         </Link>
@@ -43,7 +49,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden items-center gap-4 lg:flex">
-          <Button href="#admissions">contact Us</Button>
+          <Button onClick={onEnquiryOpen}>Enquire Now</Button>
         </div>
 
         {/* Mobile Hamburger */}
@@ -74,8 +80,8 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button href="#admissions" className="mt-2 text-center" onClick={() => setMobileMenuOpen(false)}>
-            Contact US
+          <Button className="mt-2 text-center" onClick={() => { setMobileMenuOpen(false); onEnquiryOpen?.(); }}>
+            Enquire Now
           </Button>
         </div>
       )}

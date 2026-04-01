@@ -5,14 +5,7 @@ import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/animations";
 import Button from "@/components/Button";
 
-const avatarSrcs = [
-  "/images/people/people1.avif",
-  "/images/people/people6.avif",
-  "/images/people/people3.avif",
-  "/images/people/people5.avif",
-];
-
-export default function Hero() {
+export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -33,11 +26,7 @@ export default function Hero() {
         y: 40, opacity: 0, duration: 0.8, delay: 0.3, ease: "power2.out",
         scrollTrigger: { trigger: "[data-hero-buttons]", start: "top 85%", toggleActions: "play none none none" },
       });
-      gsap.from("[data-hero-social]", {
-        opacity: 0, duration: 0.8, delay: 0.4, ease: "power2.out",
-        scrollTrigger: { trigger: "[data-hero-social]", start: "top 85%", toggleActions: "play none none none" },
-      });
-      gsap.from("[data-hero-card]", {
+gsap.from("[data-hero-card]", {
         scale: 0.95, opacity: 0, duration: 0.7, stagger: 0.15, ease: "power2.out",
         scrollTrigger: { trigger: "[data-hero-cards]", start: "top 85%", toggleActions: "play none none none" },
       });
@@ -76,52 +65,9 @@ export default function Hero() {
           </p>
 
           <div data-hero-buttons className="mb-6 flex items-center gap-3">
-            <Button href="#admissions">Enroll Now</Button>
+            <Button onClick={onEnquiryOpen}>Enquire Now</Button>
           </div>
 
-          <div
-            data-hero-social
-            className="flex flex-wrap items-center justify-center gap-4"
-          >
-            {/* Avatar stack */}
-            <div className="flex items-center">
-              {avatarSrcs.map((src, i) => (
-                <div
-                  key={src}
-                  className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-bg-primary"
-                  style={{
-                    marginLeft: i === 0 ? 0 : -8,
-                    zIndex: avatarSrcs.length - i,
-                  }}
-                >
-                  <Image
-                    src={src}
-                    alt={`Student ${i + 1}`}
-                    fill
-                    sizes="40px"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Image
-                src="/images/stars.png"
-                alt="5 stars"
-                width={100}
-                height={20}
-                className="h-auto"
-              />
-              <span className="text-sm font-semibold text-text-primary">
-                4.9/5
-              </span>
-            </div>
-
-            <span className="text-sm text-text-muted">
-              1200+ Students Enrolled
-            </span>
-          </div>
         </div>
 
         {/* Lower: three-column cards area */}
@@ -129,40 +75,56 @@ export default function Hero() {
           data-hero-cards
           className="hero-cards-grid mt-8 grid gap-2 md:gap-[6px]"
         >
-          {/* 1 - Dark quote card */}
+          {/* 1 - Announcements & Updates card */}
           <div
             data-hero-card
             className="flex min-h-0 md:min-h-[500px] flex-col justify-between rounded-[6px] bg-bg-dark p-4 md:p-6"
           >
-            <p className="mb-4 md:mb-6 font-body text-sm md:text-base leading-[1.6] md:leading-[1.7] text-white/85">
-              &ldquo;Every child who walks through our doors carries a spark of
-              brilliance. Our job is to{" "}
-              <em className="font-heading italic">fan that spark into a flame</em>{" "}
-              through rigorous academics, compassionate mentorship, and a
-              community that{" "}
-              <em className="font-heading italic">celebrates each student&rsquo;s unique journey</em>.
-              That is the Vidya Bharati promise.&rdquo;
-            </p>
-
-            <div className="flex items-center gap-3">
-              <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full">
-                <Image
-                  src="/images/people/people3.avif"
-                  alt="Dr. Ananya Sharma"
-                  fill
-                  sizes="36px"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-semibold leading-tight text-text-light">
-                  Dr. Ananya Sharma
-                </p>
-                <p className="text-xs leading-tight text-text-dark-muted">
-                  Principal
-                </p>
+            <div>
+              <span className="inline-block text-xs font-medium uppercase tracking-wider text-white/40 mb-5">
+                Latest Updates
+              </span>
+              <div className="flex flex-col gap-0">
+                {[
+                  { date: "Mar 2026", title: "Admissions Open 2026–27", desc: "Applications now accepted for Nursery to Class XI. Limited seats available.", highlight: true },
+                  { date: "Feb 2026", title: "Board Results: 100% Pass Rate", desc: "Class XII achieves 100% pass rate for the third consecutive year." },
+                  { date: "Jan 2026", title: "Annual Sports Day", desc: "Inter-house athletics, yoga demonstrations, and prize distribution ceremony." },
+                  { date: "Dec 2025", title: "Science Exhibition Winners", desc: "Our students secured 1st place at the District-Level Science Exhibition." },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="flex gap-3 py-3.5"
+                    style={{ borderBottom: "0.8px solid rgba(255,255,255,0.06)" }}
+                  >
+                    <span className="shrink-0 text-xs text-white/30 min-w-[62px] pt-0.5">
+                      {item.date}
+                    </span>
+                    <div>
+                      <p className="text-sm font-medium leading-tight text-white/90 flex items-center gap-2">
+                        {item.title}
+                        {item.highlight && (
+                          <span className="inline-block px-1.5 py-0.5 text-[10px] font-medium uppercase rounded bg-white/10 text-white/50">
+                            New
+                          </span>
+                        )}
+                      </p>
+                      <p className="text-xs leading-[1.5] text-white/40 mt-1">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
+
+            <a
+              href="#admissions"
+              className="flex items-center justify-center gap-2 mt-4 rounded-[6px] py-3 text-sm font-medium text-white/70 transition-colors duration-300 hover:text-white"
+              style={{ border: "0.8px solid rgba(255,255,255,0.1)" }}
+            >
+              View All Updates
+              <Image src="/images/icons/arrow-right.svg" alt="" width={14} height={14} style={{ opacity: 0.5, filter: "invert(1)" }} />
+            </a>
           </div>
 
           {/* 2 - Video card */}
@@ -187,7 +149,7 @@ export default function Hero() {
             className="relative flex min-h-[250px] md:min-h-[500px] flex-col justify-end overflow-hidden rounded-[6px] p-3 md:p-5"
           >
             <Image
-              src="https://i.pinimg.com/1200x/b6/d2/69/b6d26991c26a90cae062acc789327266.jpg"
+              src="https://img.freepik.com/premium-photo/indian-school-students-group-sitting-classroom_130568-364.jpg?w=2000"
               alt="Student achievement background"
               fill
               sizes="(max-width: 1024px) 100vw, 33vw"

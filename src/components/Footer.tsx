@@ -15,9 +15,9 @@ const quickLinks = [
 ];
 
 const exploreLinks = [
-  { label: "Admissions", href: "#contact" },
+  { label: "Results", href: "#achievements" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Services", href: "#services" },
-  { label: "Apply Now", href: "#contact" },
 ];
 
 const contactLinks = [
@@ -32,7 +32,7 @@ const socialIcons = [
   { src: "/images/social/twitter.svg", alt: "Twitter", href: "#" },
 ];
 
-export default function Footer() {
+export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -80,7 +80,7 @@ export default function Footer() {
               where Indian values meet academic excellence and character development
             </p>
             <div>
-              <Button variant="primary" href="#admissions">
+              <Button variant="primary" onClick={onEnquiryOpen}>
                 Apply Now
               </Button>
             </div>
@@ -286,6 +286,64 @@ export default function Footer() {
                 </button>
               </form>
             </div>
+          </div>
+        </div>
+
+        {/* ── CBSE Affiliation + Map ── */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
+          style={{
+            paddingBottom: 32,
+            borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+          }}
+        >
+          {/* CBSE Affiliation Details */}
+          <div>
+            <h4
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 14,
+                fontWeight: 600,
+                textTransform: "uppercase",
+                color: "rgba(255, 255, 255, 0.6)",
+                marginBottom: 16,
+                letterSpacing: "0.05em",
+              }}
+            >
+              Affiliation &amp; Recognition
+            </h4>
+            <div className="flex flex-col gap-3">
+              {[
+                { label: "CBSE Affiliation No.", value: "2730XXX" },
+                { label: "School Code", value: "XXXXX" },
+                { label: "Estd.", value: "1995" },
+                { label: "Board", value: "CBSE, New Delhi" },
+                { label: "Classes", value: "Nursery to XII" },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-2">
+                  <span style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", minWidth: 140 }}>
+                    {item.label}
+                  </span>
+                  <span style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", fontWeight: 500 }}>
+                    {item.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Map */}
+          <div className="rounded-[6px] overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.0!2d77.03!3d28.46!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzM2LjAiTiA3N8KwMDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Vidya Bharati International School Location"
+            />
           </div>
         </div>
 
