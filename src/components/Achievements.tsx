@@ -5,10 +5,10 @@ import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/animations";
 
 const toppers = [
-  { name: "Priya Mehta", score: "98.4%", stream: "Science", year: "2025", image: "/images/people/people1.avif" },
-  { name: "Arjun Reddy", score: "97.8%", stream: "Commerce", year: "2024", image: "/images/people/people6.avif" },
-  { name: "Sneha Iyer", score: "97.2%", stream: "Science", year: "2023", image: "/images/people/people3.avif" },
-  { name: "Rahul Sharma", score: "96.8%", stream: "Humanities", year: "2025", image: "/images/people/people5.avif" },
+  { name: "Priya Mehta", score: "98.4%", stream: "Science", year: "2025", image: "https://i.pinimg.com/1200x/e1/ae/23/e1ae2318af93f4108da16f0eaae1bfb0.jpg" },
+  { name: "Arjun Reddy", score: "97.8%", stream: "Commerce", year: "2024", image: "https://i.pinimg.com/736x/80/a6/49/80a64977e4a4749d8ce504e54f186f0e.jpg" },
+  { name: "Sneha Iyer", score: "97.2%", stream: "Science", year: "2023", image: "https://i.pinimg.com/1200x/e1/ae/23/e1ae2318af93f4108da16f0eaae1bfb0.jpg" },
+  { name: "Rahul Sharma", score: "96.8%", stream: "Humanities", year: "2025", image: "https://i.pinimg.com/736x/80/a6/49/80a64977e4a4749d8ce504e54f186f0e.jpg" },
 ];
 
 export default function Achievements() {
