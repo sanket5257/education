@@ -4,48 +4,78 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "@/lib/animations";
 
-const stories = [
+const featured = {
+  image:
+    "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/699fd5da03d11366320731d9_c09f7ec1f7d3151ea3f0fbefde7eb5d7_Testimonials-img.jpg",
+  quote:
+    "Vidya Bharati's teaching approach completely transformed my daughter's confidence and love for learning.",
+  name: "Priya Sharma",
+  role: "Parent of Class X student",
+  rating: "4.8",
+};
+
+const sideCards = [
   {
-    image: "/images/reviews/review1.jpg",
-    quote: "Vidya Bharati's teaching approach completely transformed my daughter's confidence and love for learning.",
-    name: "Priya Sharma",
-    role: "Parent, Class X",
-  },
-  {
-    image: "/images/reviews/review2.jpg",
-    quote: "The IIT foundation classes gave my son a strong head start. He comes home excited every day.",
+    avatar:
+      "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/699e9c536b22e7795f27ecaa_affc75c2e0482b8c7c9e3b566dd7b3c5_join-1.avif",
+    quote:
+      "The IIT foundation classes gave my son a strong head start. He comes home excited every day!",
     name: "Rajesh Mehta",
-    role: "Parent, Class XII",
+    role: "Parent of Class XII student",
+    date: "15.03.2026",
   },
   {
-    image: "/images/reviews/review3.jpg",
-    quote: "Finding a school that balances academics with Indian values was important — Vidya Bharati delivers both.",
+    avatar:
+      "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a7eab9143dc8794ca312f9_testi-img-7.avif",
+    quote:
+      "Finding a school that balances academics with Indian values was important — Vidya Bharati delivers both.",
     name: "Anita Reddy",
-    role: "Parent, Class VIII",
-  },
-  {
-    image: "/images/people/people1.avif",
-    quote: "The teachers know each student by name. The small class sizes make a real difference.",
-    name: "Suresh Iyer",
-    role: "Parent, Class VI",
-  },
-  {
-    image: "/images/people/people5.avif",
-    quote: "My child has thrived both academically and personally since joining Vidya Bharati.",
-    name: "Kavita Joshi",
-    role: "Parent, Class IV",
-  },
-  {
-    image: "/images/people/people6.avif",
-    quote: "The emphasis on CBSE results alongside holistic development is truly commendable.",
-    name: "Amit Verma",
-    role: "Parent, Class IX",
+    role: "Parent of Class VIII student",
+    date: "10.02.2026",
   },
 ];
 
+function QuoteIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10.6 28C8.93333 28 7.6 27.4667 6.6 26.4C5.66667 25.3333 5.2 23.8667 5.2 22C5.2 20.2 5.6 18.4 6.4 16.6C7.26667 14.8 8.46667 13.2 10 11.8C11.5333 10.3333 13.2667 9.2 15.2 8.4L16.4 10.6C14.4 11.5333 12.8 12.7333 11.6 14.2C10.4 15.6 9.73333 17.0667 9.6 18.6C10.2667 18.2 11.0667 18 12 18C13.4667 18 14.6667 18.4667 15.6 19.4C16.5333 20.3333 17 21.5333 17 23C17 24.4667 16.5 25.6667 15.5 26.6C14.5667 27.5333 13.0667 28 10.6 28ZM26.6 28C24.9333 28 23.6 27.4667 22.6 26.4C21.6667 25.3333 21.2 23.8667 21.2 22C21.2 20.2 21.6 18.4 22.4 16.6C23.2667 14.8 24.4667 13.2 26 11.8C27.5333 10.3333 29.2667 9.2 31.2 8.4L32.4 10.6C30.4 11.5333 28.8 12.7333 27.6 14.2C26.4 15.6 25.7333 17.0667 25.6 18.6C26.2667 18.2 27.0667 18 28 18C29.4667 18 30.6667 18.4667 31.6 19.4C32.5333 20.3333 33 21.5333 33 23C33 24.4667 32.5 25.6667 31.5 26.6C30.5667 27.5333 29.0667 28 26.6 28Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function StarIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 1.66669L12.575 6.88335L18.3334 7.72502L14.1667 11.7834L15.15 17.5167L10 14.8084L4.85002 17.5167L5.83335 11.7834L1.66669 7.72502L7.42502 6.88335L10 1.66669Z"
+        fill="#222222"
+        stroke="#222222"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function SuccessStories() {
   const sectionRef = useRef<HTMLElement>(null);
-  const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -61,44 +91,33 @@ export default function SuccessStories() {
         },
       });
 
-      gsap.from(".story-card", {
-        scale: 0.95,
+      gsap.from(".testimonial-featured", {
+        x: -60,
         opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
+        duration: 0.8,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: sliderRef.current,
-          start: "top 85%",
+          trigger: ".testimonial-grid",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      gsap.from(".testimonial-side-card", {
+        x: 60,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".testimonial-grid",
+          start: "top 80%",
           toggleActions: "play none none none",
         },
       });
     }, sectionRef);
 
-    // Auto-scrolling marquee for story cards
-    let marqueeTween: gsap.core.Tween | null = null;
-    const timer = setTimeout(() => {
-      if (sliderRef.current) {
-        const track = sliderRef.current;
-        const half = track.scrollWidth / 2;
-        marqueeTween = gsap.to(track, {
-          x: -half,
-          duration: 30,
-          ease: "none",
-          repeat: -1,
-        });
-
-        // Pause on hover
-        track.addEventListener("mouseenter", () => marqueeTween?.pause());
-        track.addEventListener("mouseleave", () => marqueeTween?.resume());
-      }
-    }, 100);
-
-    return () => {
-      ctx.revert();
-      clearTimeout(timer);
-      marqueeTween?.kill();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -106,85 +125,125 @@ export default function SuccessStories() {
       id="stories"
       ref={sectionRef}
       className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-primary)" }}
+      style={{ backgroundColor: "var(--color-bg-secondary)" }}
     >
       <div className="container">
         {/* Header */}
-        <div className="stories-header text-center mb-10 md:mb-14">
-          <h2 className="font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1] mb-4">
-            Success stories that <em className="italic">inspire</em>
-          </h2>
-          <p
-            className="mx-auto max-w-[550px]"
-            style={{ fontSize: 16, color: "var(--color-text-muted)", lineHeight: 1.6 }}
-          >
-            Our parents and students have experienced transformative growth through
-            Vidya Bharati&apos;s holistic education approach.
-          </p>
-        </div>
-      </div>
-
-      {/* Slider - marquee */}
-      <div className="overflow-hidden">
-        <div
-          ref={sliderRef}
-          className="flex gap-4 whitespace-nowrap"
-        >
-          {[...stories, ...stories].map((story, i) => (
-          <div
-            key={i}
-            className="story-card group relative shrink-0 overflow-hidden rounded-[24px] cursor-pointer snap-start"
-            style={{ width: 380, height: 500 }}
-          >
-            {/* Background image */}
+        <div className="stories-header text-center mb-12 md:mb-16">
+          <div className="flex items-center justify-center gap-2 mb-5">
             <Image
-              src={story.image}
-              alt={story.name}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              src="/images/icons/about-icon1.svg"
+              alt=""
+              width={18}
+              height={18}
             />
+            <span className="section-label">Parent Testimonials</span>
+          </div>
+          <h2 className="font-heading text-[28px] md:text-[40px] lg:text-[52px] leading-[1.15] max-w-[600px] mx-auto">
+            Stories from parents who trust{" "}
+            <em className="italic">Vidya Bharati</em>
+          </h2>
+        </div>
 
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-            {/* Play button - only visible on hover */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm scale-75 group-hover:scale-100 transition-transform duration-300">
-                <Image
-                  src="/images/icons/play.svg"
-                  alt="Play"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <span className="mt-2 text-sm font-medium text-white/80">Play Story</span>
-            </div>
-
-            {/* Content - bottom, slides up on hover */}
-            <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col gap-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-              <p className="text-white font-heading text-[18px] md:text-[20px] leading-[1.3]">
-                &ldquo;{story.quote}&rdquo;
-              </p>
-              <div>
-                <p className="text-white text-sm font-medium">{story.name}</p>
-                <p className="text-white/60 text-xs">{story.role}</p>
+        {/* Testimonial Grid */}
+        <div className="testimonial-grid grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {/* Left - Featured Card */}
+          <div className="testimonial-featured relative overflow-hidden rounded-[20px] md:rounded-[24px] min-h-[480px] md:min-h-[580px]">
+            <Image
+              src={featured.image}
+              alt={featured.name}
+              fill
+              className="object-cover"
+            />
+            {/* Bottom overlay */}
+            <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
+              <div
+                className="rounded-[16px] p-5 md:p-6"
+                style={{ backgroundColor: "rgba(255, 253, 249, 0.92)", backdropFilter: "blur(12px)" }}
+              >
+                <p
+                  className="font-heading italic text-[17px] md:text-[20px] leading-[1.35] mb-5"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
+                  &ldquo;{featured.quote}&rdquo;
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1.5">
+                      <StarIcon />
+                      <span className="text-[22px] font-semibold" style={{ color: "var(--color-text-primary)" }}>
+                        {featured.rating}
+                      </span>
+                    </div>
+                    <div
+                      className="w-px h-8 mx-1"
+                      style={{ backgroundColor: "var(--color-border-light)" }}
+                    />
+                    <div>
+                      <p className="text-sm font-medium" style={{ color: "var(--color-text-primary)" }}>
+                        {featured.name}
+                      </p>
+                      <p className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+                        {featured.role}
+                      </p>
+                    </div>
+                  </div>
+                  <QuoteIcon className="text-[var(--color-border-light)] w-8 h-8 md:w-10 md:h-10" />
+                </div>
               </div>
             </div>
           </div>
-        ))}
 
+          {/* Right - Stacked Cards */}
+          <div className="flex flex-col gap-5">
+            {sideCards.map((card, i) => (
+              <div
+                key={i}
+                className="testimonial-side-card flex-1 rounded-[20px] md:rounded-[24px] p-6 md:p-8 flex flex-col justify-between"
+                style={{
+                  backgroundColor: "var(--color-bg-primary)",
+                  border: "1px solid var(--color-border)",
+                }}
+              >
+                {/* Quote */}
+                <p
+                  className="font-heading italic text-[18px] md:text-[22px] lg:text-[24px] leading-[1.35] mb-6"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
+                  &ldquo;{card.quote}&rdquo;
+                </p>
+
+                {/* Footer */}
+                <div className="flex items-end justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-10 h-10 md:w-11 md:h-11 rounded-full overflow-hidden shrink-0">
+                      <Image
+                        src={card.avatar}
+                        alt={card.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium" style={{ color: "var(--color-text-primary)" }}>
+                        {card.name}
+                      </p>
+                      <p className="text-xs font-medium" style={{ color: "#5B8C7B" }}>
+                        {card.role}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+                      {card.date}
+                    </span>
+                    <QuoteIcon className="text-[var(--color-border-light)] w-8 h-8 md:w-10 md:h-10" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* Dots / pagination */}
-      <div className="flex justify-center gap-2 mt-8">
-        {stories.map((_, i) => (
-          <div
-            key={i}
-            className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: i === 0 ? "var(--color-text-primary)" : "var(--color-border-light)" }}
-          />
-        ))}
       </div>
     </section>
   );

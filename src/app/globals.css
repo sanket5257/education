@@ -44,6 +44,14 @@ html {
   scroll-padding-top: 80px;
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);

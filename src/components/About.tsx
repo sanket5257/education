@@ -121,7 +121,7 @@ export default function About() {
             width={160}
             height={160}
             className="absolute hidden lg:block pointer-events-none"
-            style={{ bottom: "-2%", left: "0%", width: "24%", height: "auto" }}
+            style={{ bottom: "-2%", left: "-4%", width: "24%", height: "auto" }}
           />
         </div>
 

@@ -8,7 +8,7 @@ import Programs from "@/components/Programs";
 import Principal from "@/components/Principal";
 import Benefits from "@/components/Benefits";
 import Achievements from "@/components/Achievements";
-import Gallery from "@/components/Gallery";
+
 import SuccessStories from "@/components/SuccessStories";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -28,7 +28,7 @@ export default function Home() {
         <Principal />
         <Benefits />
         <Achievements />
-        <Gallery />
+    
         <SuccessStories />
         <FAQ />
         <CTA onEnquiryOpen={() => setEnquiryOpen(true)} />

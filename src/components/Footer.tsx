@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 
 const quickLinks = [
   { label: "Home", href: "#hero" },
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Programs", href: "#programs" },
   { label: "Why Us", href: "#benefits" },
   { label: "Testimonials", href: "#stories" },
@@ -16,7 +16,7 @@ const quickLinks = [
 
 const exploreLinks = [
   { label: "Results", href: "#achievements" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Services", href: "#services" },
 ];
 

@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import { gsap, ScrollTrigger } from "@/lib/animations";
+import { gsap } from "@/lib/animations";
 
 const faqData = [
   {
@@ -32,8 +31,43 @@ const faqData = [
   },
 ];
 
+function FaqIcon({ isOpen }: { isOpen: boolean }) {
+  return (
+    <div
+      className="shrink-0 ml-4 w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+      style={{
+        backgroundColor: isOpen ? "#E8613C" : "transparent",
+        border: isOpen ? "none" : "1.5px solid var(--color-border-light)",
+      }}
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="transition-transform duration-300"
+        style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+      >
+        <path
+          d="M8 3.33337V12.6667"
+          stroke={isOpen ? "#fff" : "#222"}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M3.33337 8H12.6667"
+          stroke={isOpen ? "#fff" : "#222"}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const sectionRef = useRef<HTMLElement>(null);
 
   const toggleItem = (index: number) => {
@@ -54,7 +88,7 @@ export default function FAQ() {
         },
       });
 
-      gsap.from(".faq-accordion-item", {
+      gsap.from(".faq-card-item", {
         y: 20,
         opacity: 0,
         duration: 0.6,
@@ -76,81 +110,63 @@ export default function FAQ() {
       id="faq"
       ref={sectionRef}
       className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-primary)" }}
+      style={{ backgroundColor: "var(--color-bg-secondary)" }}
     >
-      <div style={{ maxWidth: 1072, margin: "0 auto", width: "100%" }}>
+      <div style={{ maxWidth: 780, margin: "0 auto", width: "100%" }}>
         {/* Centered Header */}
-        <div className="faq-header flex flex-col items-center text-center gap-4 mb-8 md:mb-14">
-          <span className="section-label">FAQ</span>
+        <div className="faq-header flex flex-col items-center text-center gap-5 mb-10 md:mb-14">
+          <span className="section-label">Questions Parents Often Ask</span>
           <h2
-            className="font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1]"
+            className="font-heading text-[28px] md:text-[40px] lg:text-[52px] leading-[1.12]"
           >
-            Your <em className="italic">questions</em> answered.
+            Clear answers to help you feel confident.
           </h2>
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.5,
-              color: "var(--color-text-muted)",
-              maxWidth: 560,
-            }}
-          >
-            Everything you need to know about Vidya Bharati International School.
-            Still have questions? Get in touch and we&apos;ll walk you through it.
-          </p>
         </div>
 
         {/* Accordion */}
-        <div className="faq-accordion">
-          {faqData.map((item, index) => (
-            <div
-              key={index}
-              className="faq-accordion-item"
-              style={{
-                borderBottom: "1px solid var(--color-border-light)",
-              }}
-            >
-              <button
-                className="w-full flex items-center justify-between py-5 cursor-pointer"
-                onClick={() => toggleItem(index)}
-                aria-expanded={openIndex === index}
-              >
-                <span
-                  className="text-left font-medium text-[15px] md:text-[18px]"
-                  style={{
-                    color: "var(--color-text-primary)",
-                  }}
-                >
-                  {item.question}
-                </span>
-
-                <Image
-                  src="/images/icons/plus.svg"
-                  alt={openIndex === index ? "Collapse" : "Expand"}
-                  width={20}
-                  height={20}
-                  className={`faq-icon shrink-0 ml-6 ${
-                    openIndex === index ? "open" : ""
-                  }`}
-                />
-              </button>
-
+        <div className="faq-accordion flex flex-col gap-3">
+          {faqData.map((item, index) => {
+            const isOpen = openIndex === index;
+            return (
               <div
-                className={`faq-answer ${openIndex === index ? "open" : ""}`}
+                key={index}
+                className="faq-card-item rounded-[16px] transition-shadow duration-300"
+                style={{
+                  backgroundColor: "var(--color-bg-primary)",
+                  border: "1px solid var(--color-border)",
+                }}
               >
-                <p
-                  className="pb-5"
-                  style={{
-                    fontSize: 16,
-                    color: "var(--color-text-muted)",
-                    lineHeight: 1.6,
-                  }}
+                <button
+                  className="w-full flex items-center justify-between px-6 py-5 md:px-7 md:py-6 cursor-pointer"
+                  onClick={() => toggleItem(index)}
+                  aria-expanded={isOpen}
                 >
-                  {item.answer}
-                </p>
+                  <span
+                    className="text-left font-heading text-[16px] md:text-[18px] leading-[1.3]"
+                    style={{ color: "var(--color-text-primary)" }}
+                  >
+                    {item.question}
+                  </span>
+                  <FaqIcon isOpen={isOpen} />
+                </button>
+
+                <div
+                  className={`faq-answer ${isOpen ? "open" : ""}`}
+                >
+                  <p
+                    className="px-6 pb-5 md:px-7 md:pb-6"
+                    style={{
+                      fontSize: 15,
+                      color: "var(--color-text-muted)",
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {item.answer}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -32,10 +32,10 @@ export default function Achievements() {
 
     }, sectionRef);
 
-    // Marquee: run outside context so it's independent
+    // Marquee: desktop only, snap scroll on mobile
     let marqueeTween: gsap.core.Tween | null = null;
     const timer = setTimeout(() => {
-      if (marqueeRef.current) {
+      if (marqueeRef.current && window.innerWidth >= 1024) {
         const track = marqueeRef.current;
         const half = track.scrollWidth / 2;
         marqueeTween = gsap.to(track, {
@@ -99,12 +99,12 @@ export default function Achievements() {
           <h3 className="font-heading text-[22px] md:text-[28px] leading-[1.2] mb-6">
             Our <em className="italic">Toppers</em>
           </h3>
-          <div className="overflow-hidden">
-            <div ref={marqueeRef} className="flex whitespace-nowrap">
+          <div className="overflow-x-auto lg:overflow-hidden snap-x snap-mandatory lg:snap-none scrollbar-hide">
+            <div ref={marqueeRef} className="flex whitespace-nowrap px-4 lg:px-0">
               {[...toppers, ...toppers].map((topper, i) => (
                 <div
                   key={`${topper.name}-${i}`}
-                  className="shrink-0 w-[220px] md:w-[260px] mx-2 rounded-[8px] overflow-hidden bg-white whitespace-normal"
+                  className="shrink-0 w-[75vw] md:w-[260px] mx-2 rounded-[8px] overflow-hidden bg-white whitespace-normal snap-center"
                   style={{ border: "1px solid var(--color-border-light)" }}
                 >
                   <div className="relative w-full aspect-[3/4]">

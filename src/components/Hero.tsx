@@ -93,7 +93,7 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
   }, []);
 
   return (
-    <div ref={wrapperRef}>
+    <div ref={wrapperRef} className="overflow-x-hidden">
       <section id="hero" className="bg-bg-primary">
         <div className="container section-padding">
           {/* Hero text */}
@@ -122,12 +122,12 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
           </div>
 
           {/* Cards */}
-          <div className="mt-8">
+          <div className="hidden lg:block mt-8">
             <div data-hero-cards className="flex flex-col lg:flex-row gap-2 md:gap-[6px]">
               {/* 1 - Announcements */}
               <div
                 data-hero-card
-                className="flex lg:w-1/3 min-h-0 md:min-h-[500px] flex-col justify-between rounded-[6px] bg-bg-dark p-4 md:p-6"
+                className="hidden lg:flex lg:w-1/3 min-h-0 lg:min-h-[500px] flex-col justify-between rounded-[6px] bg-bg-dark p-4 md:p-6"
               >
                 <div>
                   <span className="inline-block text-xs font-medium uppercase tracking-wider text-white/40 mb-5">
@@ -175,13 +175,13 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
                 </a>
               </div>
 
-              {/* 2 - Empty middle (video overlaps here visually) */}
-              <div className="lg:w-1/3 min-h-[200px] md:min-h-[500px]" />
+              {/* 2 - Empty middle (video overlaps here on desktop) */}
+              <div className="hidden lg:block lg:w-1/3 min-h-[500px]" />
 
               {/* 3 - Stat card */}
               <div
                 data-hero-card
-                className="relative lg:w-1/3 flex min-h-[250px] md:min-h-[500px] flex-col justify-end overflow-hidden rounded-[6px] p-3 md:p-5"
+                className="relative hidden lg:flex lg:w-1/3 min-h-[250px] lg:min-h-[500px] flex-col justify-end overflow-hidden rounded-[6px] p-3 md:p-5"
               >
                 <Image
                   src="https://img.freepik.com/premium-photo/indian-school-students-group-sitting-classroom_130568-364.jpg?w=2000"
@@ -206,12 +206,12 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
       </section>
 
       {/* Video Section — its own section, equal padding top & bottom */}
-      <section data-video-section className="bg-bg-primary py-20">
+      <section data-video-section className="bg-bg-primary py-10 lg:py-20">
         <div className="container">
           <div
             ref={videoRef}
-            className="relative w-full overflow-hidden rounded-[24px]"
-            style={{ height: "calc(100vh - 160px)", zIndex: 3 }}
+            className="relative w-full overflow-hidden rounded-[12px] lg:rounded-[24px]"
+            style={{ height: "clamp(300px, 60vh, calc(100vh - 160px))", zIndex: 3 }}
           >
             <video
               autoPlay

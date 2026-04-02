@@ -7,10 +7,10 @@ import Button from "@/components/Button";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Programs", href: "#programs" },
   { label: "Results", href: "#achievements" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "Gallery", href: "/gallery" },
 ];
 
 export default function Navbar({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
