@@ -6,11 +6,11 @@ import Image from "next/image";
 import Button from "@/components/Button";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Programs", href: "#programs" },
-  { label: "Results", href: "#achievements" },
+  { label: "Admissions", href: "#admissions" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Contact Us", href: "#contact" },
 ];
 
 export default function Navbar({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {

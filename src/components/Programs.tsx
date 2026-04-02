@@ -6,67 +6,81 @@ import { gsap, ScrollTrigger } from "@/lib/animations";
 
 const programs = [
   {
-    image: "/images/programs/innovation-lab.jpg",
+    tag: "Classes VI–XII",
     heading: "STEM & Innovation Lab",
     description:
-      "Engage in hands-on experiments, robotics challenges, and coding projects that bring science and technology to life in the classroom",
-    tag: "Classes VI-XII",
+      "Engage in hands-on experiments, robotics challenges, and coding projects that bring science and technology to life in the classroom.",
+    image:
+      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/699ecd0545a0dc4df09760ef_program-1.jpg",
   },
   {
-    image: "/images/programs/arts.jpg",
+    tag: "All Classes",
     heading: "Indian Classical Arts & Humanities",
     description:
-      "Discover your creative voice through Indian classical music, dance, visual arts, and a rich exploration of Indian literature, Sanskrit, and history",
-    tag: "All Classes",
+      "Discover your creative voice through Indian classical music, dance, visual arts, and a rich exploration of Indian literature, Sanskrit, and history.",
+    image:
+      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/699ecd41d869cc3853de182f_program-2.jpg",
   },
   {
-    image: "/images/programs/iit-neet.jpg",
+    tag: "Classes IX–XII",
     heading: "IIT/NEET Foundation",
     description:
-      "Build a strong foundation for competitive entrance exams with advanced coaching in mathematics, physics, chemistry, and biology",
-    tag: "Classes IX-XII",
-  },
-  {
-    image: "/images/programs/sports.jpg",
-    heading: "Sports & Yoga",
-    description:
-      "Build teamwork, discipline, and healthy habits through competitive sports, yoga, physical education, and wellness programs",
-    tag: "All Classes",
+      "Build a strong foundation for competitive entrance exams with advanced coaching in mathematics, physics, chemistry, and biology.",
+    image:
+      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/69b139fe96eff708eae38605_program-3.jpg",
   },
 ];
 
 export default function Programs() {
   const sectionRef = useRef<HTMLElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px)", () => {
+      if (!leftRef.current || !sectionRef.current) return;
+
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 100px",
+        end: "bottom bottom",
+        pin: leftRef.current,
+        pinSpacing: false,
+      });
+    });
+
     const ctx = gsap.context(() => {
-      gsap.from(".programs-header", {
+      gsap.from(".programs-header-content", {
         y: 40,
         opacity: 0,
         duration: 0.8,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".programs-header",
+          trigger: ".programs-header-content",
           start: "top 85%",
           toggleActions: "play none none none",
         },
       });
 
-      gsap.from(".programs-card", {
-        scale: 0.95,
+      gsap.from(".program-card", {
+        y: 60,
         opacity: 0,
         duration: 0.7,
-        stagger: 0.15,
+        stagger: 0.2,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".programs-cards",
+          trigger: ".program-list",
           start: "top 85%",
           toggleActions: "play none none none",
         },
       });
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      mm.revert();
+    };
   }, []);
 
   return (
@@ -77,91 +91,87 @@ export default function Programs() {
       style={{ backgroundColor: "var(--color-bg-secondary)" }}
     >
       <div className="container">
-        {/* Header */}
-        <div className="programs-header flex flex-col gap-6 lg:flex-row lg:gap-16 mb-8 md:mb-12">
-          <div className="lg:w-1/2 flex flex-col gap-4">
-            <span className="section-label">academics</span>
-            <h2
-              className="font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1]"
-            >
-              Explore Our{" "}
-              <em className="italic">Academic</em> Programs
-            </h2>
-          </div>
-          <div className="lg:w-1/2 flex items-end">
-            <p
-              style={{
-                fontSize: 16,
-                lineHeight: 1.6,
-                color: "var(--color-text-muted)",
-              }}
-            >
-              Vidya Bharati International School offers a comprehensive CBSE
-              curriculum that nurtures curiosity and critical thinking. From
-              primary foundations to IIT/NEET preparation, every student finds
-              their path to excellence in the Indian education system.
-            </p>
-          </div>
-        </div>
-
-        {/* Program Cards - 2x2 grid */}
-        <div className="programs-cards grid grid-cols-1 md:grid-cols-2 gap-6">
-          {programs.map((program) => (
-            <div
-              key={program.heading}
-              className="programs-card flex flex-col gap-4"
-            >
-              <div
-                className="relative w-full overflow-hidden rounded-[6px]"
-                style={{ aspectRatio: "4 / 3" }}
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+          {/* Left - Pinned on desktop */}
+          <div ref={leftRef} className="lg:w-[42%] shrink-0">
+            <div className="programs-header-content flex flex-col gap-5">
+              <span className="section-label">What We Teach</span>
+              <h2 className="font-heading text-[28px] md:text-[36px] lg:text-[48px] leading-[1.1]">
+                Comprehensive Programs for{" "}
+                <em className="italic">Academic</em> Excellence
+              </h2>
+              <p
+                style={{
+                  fontSize: 16,
+                  lineHeight: 1.6,
+                  color: "var(--color-text-muted)",
+                }}
               >
+                Our programs are designed to address every stage of learning.
+                From early foundations to competitive exam preparation, each
+                initiative focuses on creating well-rounded, confident students.
+              </p>
+            </div>
+          </div>
+
+          {/* Right - Scrolling image cards */}
+          <div className="lg:w-[58%] program-list flex flex-col gap-6">
+            {programs.map((program) => (
+              <div
+                key={program.heading}
+                className="program-card relative overflow-hidden rounded-[20px] md:rounded-[24px]"
+                style={{ minHeight: 560 }}
+              >
+                {/* Background image */}
                 <Image
                   src={program.image}
                   alt={program.heading}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 58vw"
                   className="object-cover"
                 />
-              </div>
-              <div className="flex flex-col gap-2">
-                <h3
-                  style={{
-                    fontFamily: "var(--font-heading)",
-                    fontSize: 24,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {program.heading}
-                </h3>
-                <p
-                  style={{
-                    fontSize: 14,
-                    lineHeight: 1.5,
-                    color: "var(--color-text-muted)",
-                  }}
-                >
-                  {program.description}
-                </p>
-              </div>
-              <div className="flex items-center mt-auto">
-                <div
-                  className="flex items-center gap-2 cursor-pointer"
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 500,
-                    color: "var(--color-text-primary)",
-                  }}
-                >
-                  <span>Learn More</span>
-                  <Image
-                    src="/images/icons/arrow-right.svg"
-                    alt="Arrow"
-                    width={16}
-                    height={16}
-                  />
+
+                {/* Frosted overlay card at bottom */}
+                <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                  <div
+                    className="rounded-[16px] p-5 md:p-6"
+                    style={{
+                      backgroundColor: "rgba(255, 253, 249, 0.88)",
+                      backdropFilter: "blur(16px)",
+                      WebkitBackdropFilter: "blur(16px)",
+                    }}
+                  >
+                    {/* Tag */}
+                    <span
+                      className="inline-block text-[12px] font-medium px-3 py-1 rounded-full mb-3"
+                      style={{
+                        backgroundColor: "#FFF8E1",
+                        color: "var(--color-text-primary)",
+                      }}
+                    >
+                      {program.tag}
+                    </span>
+
+                    {/* Title */}
+                    <h3 className="font-heading text-[20px] md:text-[24px] leading-[1.2] mb-2">
+                      {program.heading}
+                    </h3>
+
+                    {/* Description */}
+                    <p
+                      style={{
+                        fontSize: 14,
+                        lineHeight: 1.55,
+                        color: "var(--color-text-muted)",
+                      }}
+                    >
+                      {program.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
