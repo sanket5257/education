@@ -99,7 +99,10 @@ export default function Achievements() {
           <h3 className="font-heading text-[22px] md:text-[28px] leading-[1.2] mb-6">
             Our <em className="italic">Toppers</em>
           </h3>
-          <div className="overflow-x-auto lg:overflow-hidden snap-x snap-mandatory lg:snap-none scrollbar-hide">
+          <div className="relative overflow-x-auto lg:overflow-hidden snap-x snap-mandatory lg:snap-none scrollbar-hide">
+            {/* Fade edges */}
+            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 bottom-0 w-48 z-10" style={{ background: "linear-gradient(to right, var(--color-bg-secondary), transparent)" }} />
+            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 bottom-0 w-48 z-10" style={{ background: "linear-gradient(to left, var(--color-bg-secondary), transparent)" }} />
             <div ref={marqueeRef} className="flex whitespace-nowrap px-4 lg:px-0">
               {[...toppers, ...toppers].map((topper, i) => (
                 <div

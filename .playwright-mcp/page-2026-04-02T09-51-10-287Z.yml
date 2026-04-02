@@ -1,0 +1,470 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Vidya Bharati Logo Vidya Bharati" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Vidya Bharati Logo" [ref=e5]
+        - generic [ref=e6]: Vidya Bharati
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e12]:
+          - link "Admissions" [ref=e13] [cursor=pointer]:
+            - /url: "#admissions"
+        - listitem [ref=e14]:
+          - link "Gallery" [ref=e15] [cursor=pointer]:
+            - /url: /gallery
+        - listitem [ref=e16]:
+          - link "Contact Us" [ref=e17] [cursor=pointer]:
+            - /url: "#contact"
+      - button "Enquire Now Enquire Now" [ref=e19] [cursor=pointer]:
+        - generic [ref=e21]: Enquire Now
+        - generic [ref=e22]: Enquire Now
+  - main [ref=e23]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]: Welcome to Vidya Bharati International
+        - heading "Where Knowledge Meets Values, Futures Take Shape" [level=1] [ref=e29]:
+          - text: Where Knowledge Meets Values,
+          - emphasis [ref=e30]: Futures
+          - text: Take Shape
+        - paragraph [ref=e31]: At Vidya Bharati International School, we nurture every student with a rigorous CBSE curriculum, dedicated teachers, and a values-based education where lifelong learners thrive from nursery through Class XII.
+        - button "Enquire Now Enquire Now" [ref=e33] [cursor=pointer]:
+          - generic [ref=e35]: Enquire Now
+          - generic [ref=e36]: Enquire Now
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: Latest Updates
+            - generic [ref=e42]:
+              - generic [ref=e43]:
+                - generic [ref=e44]: Mar 2026
+                - generic [ref=e45]:
+                  - paragraph [ref=e46]:
+                    - text: Admissions Open 2026–27
+                    - generic [ref=e47]: New
+                  - paragraph [ref=e48]: Applications now accepted for Nursery to Class XI. Limited seats available.
+              - generic [ref=e49]:
+                - generic [ref=e50]: Feb 2026
+                - generic [ref=e51]:
+                  - paragraph [ref=e52]: "Board Results: 100% Pass Rate"
+                  - paragraph [ref=e53]: Class XII achieves 100% pass rate for the third consecutive year.
+              - generic [ref=e54]:
+                - generic [ref=e55]: Jan 2026
+                - generic [ref=e56]:
+                  - paragraph [ref=e57]: Annual Sports Day
+                  - paragraph [ref=e58]: Inter-house athletics, yoga demonstrations, and prize distribution ceremony.
+              - generic [ref=e59]:
+                - generic [ref=e60]: Dec 2025
+                - generic [ref=e61]:
+                  - paragraph [ref=e62]: Science Exhibition Winners
+                  - paragraph [ref=e63]: Our students secured 1st place at the District-Level Science Exhibition.
+          - link "View All Updates" [ref=e64] [cursor=pointer]:
+            - /url: "#admissions"
+        - generic [ref=e66]:
+          - img "Student achievement background" [ref=e67]
+          - generic [ref=e69]:
+            - paragraph [ref=e70]: 96%
+            - paragraph [ref=e71]: of Vidya Bharati graduates secure admission to top Indian universities and IITs.
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - img "Students at Vidya Bharati International School" [ref=e80]
+        - img "Child's drawing"
+      - generic [ref=e81]:
+        - text: About Us
+        - heading "Our Story & Mission" [level=2] [ref=e83]:
+          - emphasis [ref=e84]: Our Story
+          - text: "& Mission"
+        - paragraph [ref=e86]: Established in 1995, Vidya Bharati International School has spent nearly three decades preparing young minds for the future. Our mission is to foster curiosity, integrity, and resilience in every student through a rigorous CBSE curriculum, Indian values, and a vibrant school community committed to holistic education.
+        - link "Learn More Learn More" [ref=e88] [cursor=pointer]:
+          - /url: "#about"
+          - generic [ref=e90]: Learn More
+          - generic [ref=e91]: Learn More
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - img "Academic Excellence" [ref=e95]
+            - generic [ref=e96]:
+              - paragraph [ref=e97]: Academic Excellence
+              - paragraph [ref=e98]: A tradition of academic achievement, CBSE board results, and holistic development
+          - generic [ref=e99]:
+            - img "Cultural Values" [ref=e100]
+            - generic [ref=e101]:
+              - paragraph [ref=e102]: Cultural Values
+              - paragraph [ref=e103]: Rooted in Indian traditions, fostering respect, discipline, and a sense of belonging
+    - generic [ref=e106]:
+      - generic [ref=e108]:
+        - generic [ref=e109]: What We Teach
+        - heading "Comprehensive Programs for Academic Excellence" [level=2] [ref=e110]:
+          - text: Comprehensive Programs for
+          - emphasis [ref=e111]: Academic
+          - text: Excellence
+        - paragraph [ref=e112]: Our programs are designed to address every stage of learning. From early foundations to competitive exam preparation, each initiative focuses on creating well-rounded, confident students.
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - img "STEM & Innovation Lab" [ref=e115]
+          - generic [ref=e117]:
+            - generic [ref=e118]: Classes VI–XII
+            - heading "STEM & Innovation Lab" [level=3] [ref=e119]
+            - paragraph [ref=e120]: Engage in hands-on experiments, robotics challenges, and coding projects that bring science and technology to life in the classroom.
+        - generic [ref=e121]:
+          - img "Indian Classical Arts & Humanities" [ref=e122]
+          - generic [ref=e124]:
+            - generic [ref=e125]: All Classes
+            - heading "Indian Classical Arts & Humanities" [level=3] [ref=e126]
+            - paragraph [ref=e127]: Discover your creative voice through Indian classical music, dance, visual arts, and a rich exploration of Indian literature, Sanskrit, and history.
+        - generic [ref=e128]:
+          - img "IIT/NEET Foundation" [ref=e129]
+          - generic [ref=e131]:
+            - generic [ref=e132]: Classes IX–XII
+            - heading "IIT/NEET Foundation" [level=3] [ref=e133]
+            - paragraph [ref=e134]: Build a strong foundation for competitive entrance exams with advanced coaching in mathematics, physics, chemistry, and biology.
+    - generic [ref=e137]:
+      - generic [ref=e139]:
+        - img "Dr. Ananya Sharma - Principal, Vidya Bharati International School" [ref=e140]
+        - generic [ref=e141]:
+          - paragraph [ref=e142]: Dr. Ananya Sharma
+          - paragraph [ref=e143]: M.Ed., Ph.D. in Education • 25+ Years in Education
+      - generic [ref=e144]:
+        - text: From The Principal's Desk
+        - heading "A Message of Commitment" [level=2] [ref=e146]:
+          - text: A Message of
+          - emphasis [ref=e147]: Commitment
+        - generic [ref=e149]:
+          - paragraph [ref=e150]: Dear Parents and Students,
+          - paragraph [ref=e151]: At Vidya Bharati International School, we believe that education is not merely about textbooks and examinations — it is about nurturing the complete individual. Every child who enters our campus carries within them unique potential, and our sacred responsibility is to help that potential flourish.
+          - paragraph [ref=e152]: Over the past three decades, we have built a community where academic rigour walks hand-in-hand with Indian values, where curiosity is celebrated, and where every student is known, valued, and guided. Our consistently outstanding CBSE results are a testament not to rote learning, but to the deep understanding and critical thinking we cultivate in each classroom.
+          - paragraph [ref=e153]: I invite you to visit our campus and experience the Vidya Bharati difference firsthand.
+          - paragraph [ref=e154]: — Dr. Ananya Sharma, Principal
+        - generic [ref=e155]:
+          - generic [ref=e156]:
+            - paragraph [ref=e157]: 25+
+            - paragraph [ref=e158]: Years in Education
+          - generic [ref=e159]:
+            - paragraph [ref=e160]: M.Ed, Ph.D.
+            - paragraph [ref=e161]: Qualifications
+          - generic [ref=e162]:
+            - paragraph [ref=e163]: CBSE
+            - paragraph [ref=e164]: Board Certified
+    - generic [ref=e166]:
+      - generic [ref=e167]:
+        - generic [ref=e168]: Why Vidya Bharati
+        - heading "Built for student success." [level=2] [ref=e169]:
+          - text: Built for
+          - emphasis [ref=e170]: student
+          - text: success.
+        - paragraph [ref=e171]: Everything at Vidya Bharati International School is designed with one goal — helping every student thrive academically, socially, and personally while staying rooted in Indian values.
+      - generic [ref=e172]:
+        - generic [ref=e173]:
+          - img "Experienced Faculty" [ref=e175]
+          - heading "Experienced Faculty" [level=3] [ref=e176]
+          - paragraph [ref=e177]: Dedicated teachers with decades of expertise in CBSE curriculum who genuinely care about every student's growth.
+        - generic [ref=e178]:
+          - img "Small Class Sizes" [ref=e180]
+          - heading "Small Class Sizes" [level=3] [ref=e181]
+          - paragraph [ref=e182]: A 15:1 student-teacher ratio ensures every child gets the individual attention they deserve.
+        - generic [ref=e183]:
+          - img "Modern Campus" [ref=e185]
+          - heading "Modern Campus" [level=3] [ref=e186]
+          - paragraph [ref=e187]: Smart classrooms, science labs, sports complex, yoga hall, and digital learning centers built for the future.
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - paragraph [ref=e190]: 1,200+
+          - paragraph [ref=e191]: Students Enrolled
+        - generic [ref=e192]:
+          - paragraph [ref=e193]: 15:1
+          - paragraph [ref=e194]: Student-Teacher Ratio
+        - generic [ref=e195]:
+          - paragraph [ref=e196]: 94%
+          - paragraph [ref=e197]: University Admission
+        - generic [ref=e198]:
+          - paragraph [ref=e199]: 50+
+          - paragraph [ref=e200]: Clubs & Activities
+    - generic [ref=e202]:
+      - generic [ref=e203]:
+        - text: Results & Achievements
+        - heading "Board Exam Results" [level=2] [ref=e205]:
+          - text: Board Exam
+          - emphasis [ref=e206]: Results
+      - generic [ref=e207]:
+        - generic [ref=e208]:
+          - paragraph [ref=e209]: 100%
+          - paragraph [ref=e210]: Pass Rate
+        - generic [ref=e211]:
+          - paragraph [ref=e212]: 96.2%
+          - paragraph [ref=e213]: Avg. Score (Top 10)
+        - generic [ref=e214]:
+          - paragraph [ref=e215]: 78%
+          - paragraph [ref=e216]: Distinction
+        - generic [ref=e217]:
+          - paragraph [ref=e218]: 45+
+          - paragraph [ref=e219]: IIT / AIIMS / NIT
+      - generic [ref=e220]:
+        - heading "Our Toppers" [level=3] [ref=e221]:
+          - text: Our
+          - emphasis [ref=e222]: Toppers
+        - generic [ref=e224]:
+          - generic [ref=e225]:
+            - img "Priya Mehta" [ref=e227]
+            - generic [ref=e228]:
+              - paragraph [ref=e229]: Priya Mehta
+              - paragraph [ref=e230]: 98.4%
+              - paragraph [ref=e231]: Science • 2025
+          - generic [ref=e232]:
+            - img "Arjun Reddy" [ref=e234]
+            - generic [ref=e235]:
+              - paragraph [ref=e236]: Arjun Reddy
+              - paragraph [ref=e237]: 97.8%
+              - paragraph [ref=e238]: Commerce • 2024
+          - generic [ref=e239]:
+            - img "Sneha Iyer" [ref=e241]
+            - generic [ref=e242]:
+              - paragraph [ref=e243]: Sneha Iyer
+              - paragraph [ref=e244]: 97.2%
+              - paragraph [ref=e245]: Science • 2023
+          - generic [ref=e246]:
+            - img "Rahul Sharma" [ref=e248]
+            - generic [ref=e249]:
+              - paragraph [ref=e250]: Rahul Sharma
+              - paragraph [ref=e251]: 96.8%
+              - paragraph [ref=e252]: Humanities • 2025
+          - generic [ref=e253]:
+            - img "Priya Mehta" [ref=e255]
+            - generic [ref=e256]:
+              - paragraph [ref=e257]: Priya Mehta
+              - paragraph [ref=e258]: 98.4%
+              - paragraph [ref=e259]: Science • 2025
+          - generic [ref=e260]:
+            - img "Arjun Reddy" [ref=e262]
+            - generic [ref=e263]:
+              - paragraph [ref=e264]: Arjun Reddy
+              - paragraph [ref=e265]: 97.8%
+              - paragraph [ref=e266]: Commerce • 2024
+          - generic [ref=e267]:
+            - img "Sneha Iyer" [ref=e269]
+            - generic [ref=e270]:
+              - paragraph [ref=e271]: Sneha Iyer
+              - paragraph [ref=e272]: 97.2%
+              - paragraph [ref=e273]: Science • 2023
+          - generic [ref=e274]:
+            - img "Rahul Sharma" [ref=e276]
+            - generic [ref=e277]:
+              - paragraph [ref=e278]: Rahul Sharma
+              - paragraph [ref=e279]: 96.8%
+              - paragraph [ref=e280]: Humanities • 2025
+      - generic [ref=e281]:
+        - heading "Awards & Recognitions" [level=2] [ref=e282]:
+          - text: Awards &
+          - emphasis [ref=e283]: Recognitions
+        - generic [ref=e284]:
+          - generic [ref=e285] [cursor=pointer]:
+            - img "Best CBSE School" [ref=e286]
+            - generic [ref=e288]:
+              - paragraph [ref=e289]: Best CBSE School
+              - paragraph [ref=e290]: Gurugram District
+              - generic [ref=e291]: "2025"
+          - generic [ref=e292] [cursor=pointer]:
+            - img "Science Olympiad" [ref=e293]
+            - generic [ref=e295]:
+              - paragraph [ref=e296]: Science Olympiad
+              - paragraph [ref=e297]: 3 Gold Medals — National
+              - generic [ref=e298]: "2024"
+          - generic [ref=e299] [cursor=pointer]:
+            - img "Green School" [ref=e300]
+            - generic [ref=e302]:
+              - paragraph [ref=e303]: Green School
+              - paragraph [ref=e304]: CSE Certification
+              - generic [ref=e305]: "2024"
+          - generic [ref=e306] [cursor=pointer]:
+            - img "Debate Championship" [ref=e307]
+            - generic [ref=e309]:
+              - paragraph [ref=e310]: Debate Championship
+              - paragraph [ref=e311]: Regional Winners
+              - generic [ref=e312]: "2023"
+    - generic [ref=e314]:
+      - generic [ref=e315]:
+        - generic [ref=e317]: Parent Testimonials
+        - heading "Stories from parents who trust Vidya Bharati" [level=2] [ref=e318]:
+          - text: Stories from parents who trust
+          - emphasis [ref=e319]: Vidya Bharati
+      - generic [ref=e320]:
+        - generic [ref=e321]:
+          - img "Priya Sharma" [ref=e322]
+          - generic [ref=e324]:
+            - paragraph [ref=e325]: “Vidya Bharati's teaching approach completely transformed my daughter's confidence and love for learning.”
+            - generic [ref=e326]:
+              - generic [ref=e327]:
+                - generic [ref=e328]:
+                  - img [ref=e329]
+                  - generic [ref=e331]: "4.8"
+                - generic [ref=e333]:
+                  - paragraph [ref=e334]: Priya Sharma
+                  - paragraph [ref=e335]: Parent of Class X student
+              - img [ref=e336]
+        - generic [ref=e338]:
+          - generic [ref=e339]:
+            - paragraph [ref=e340]: “The IIT foundation classes gave my son a strong head start. He comes home excited every day!”
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - img "Rajesh Mehta" [ref=e344]
+                - generic [ref=e345]:
+                  - paragraph [ref=e346]: Rajesh Mehta
+                  - paragraph [ref=e347]: Parent of Class XII student
+              - generic [ref=e348]:
+                - generic [ref=e349]: 15.03.2026
+                - img [ref=e350]
+          - generic [ref=e352]:
+            - paragraph [ref=e353]: “Finding a school that balances academics with Indian values was important — Vidya Bharati delivers both.”
+            - generic [ref=e354]:
+              - generic [ref=e355]:
+                - img "Anita Reddy" [ref=e357]
+                - generic [ref=e358]:
+                  - paragraph [ref=e359]: Anita Reddy
+                  - paragraph [ref=e360]: Parent of Class VIII student
+              - generic [ref=e361]:
+                - generic [ref=e362]: 10.02.2026
+                - img [ref=e363]
+    - generic [ref=e366]:
+      - generic [ref=e367]:
+        - generic [ref=e368]: Questions Parents Often Ask
+        - heading "Clear answers to help you feel confident." [level=2] [ref=e369]
+      - generic [ref=e370]:
+        - generic [ref=e371]:
+          - button "What classes does Vidya Bharati International School offer?" [expanded] [ref=e372] [cursor=pointer]:
+            - generic [ref=e373]: What classes does Vidya Bharati International School offer?
+            - img [ref=e375]
+          - paragraph [ref=e379]: We serve students from nursery through Class XII under the CBSE board, providing a continuous and cohesive educational experience that grows with your child at every stage of their development.
+        - generic [ref=e380]:
+          - button "What is the admission process?" [ref=e381] [cursor=pointer]:
+            - generic [ref=e382]: What is the admission process?
+            - img [ref=e384]
+          - paragraph [ref=e385]: Admissions open in January each academic session. Families can apply online through our portal, after which students are invited for an interaction and campus visit before final admission decisions are made.
+        - generic [ref=e386]:
+          - button "Does Vidya Bharati International School offer scholarships?" [ref=e387] [cursor=pointer]:
+            - generic [ref=e388]: Does Vidya Bharati International School offer scholarships?
+            - img [ref=e390]
+          - paragraph [ref=e391]: Yes, we offer both merit-based and need-based scholarships to ensure that a high-quality education remains accessible to deserving students from all backgrounds across India.
+        - generic [ref=e392]:
+          - button "What extracurricular activities are available?" [ref=e393] [cursor=pointer]:
+            - generic [ref=e394]: What extracurricular activities are available?
+            - img [ref=e396]
+          - paragraph [ref=e397]: We offer over 30 clubs and activities including sports teams, debate society, robotics club, Indian classical music and dance, yoga, NCC, community service groups, and much more.
+        - generic [ref=e398]:
+          - button "What makes Vidya Bharati different from other schools?" [ref=e399] [cursor=pointer]:
+            - generic [ref=e400]: What makes Vidya Bharati different from other schools?
+            - img [ref=e402]
+          - paragraph [ref=e403]: Our 15:1 student-teacher ratio, experienced CBSE faculty, modern campus facilities, strong IIT/NEET foundation programme, and a curriculum that balances academic rigour with Indian values and holistic development set us apart.
+    - generic [ref=e410]:
+      - heading "Begin your child's journey, today." [level=2] [ref=e411]:
+        - text: Begin your child's
+        - emphasis [ref=e412]: journey
+        - text: ", today."
+      - paragraph [ref=e413]: Applications for the 2026-27 academic session are now open. Secure your child's place at Vidya Bharati International School today.
+      - generic [ref=e414]:
+        - button "Apply Now Apply Now" [ref=e415] [cursor=pointer]:
+          - generic [ref=e417]: Apply Now
+          - generic [ref=e418]: Apply Now
+        - button "Contact Us Contact Us" [ref=e419] [cursor=pointer]:
+          - generic [ref=e421]: Contact Us
+          - generic [ref=e422]: Contact Us
+  - contentinfo [ref=e423]:
+    - generic [ref=e424]:
+      - generic [ref=e426]:
+        - paragraph [ref=e427]:
+          - emphasis [ref=e428]: A nurturing environment
+          - text: where Indian values meet academic excellence and character development
+        - button "Apply Now Apply Now" [ref=e430] [cursor=pointer]:
+          - generic [ref=e432]: Apply Now
+          - generic [ref=e433]: Apply Now
+      - generic [ref=e434]:
+        - generic [ref=e435]:
+          - heading "Quick Links" [level=4] [ref=e436]
+          - list [ref=e437]:
+            - listitem [ref=e438]:
+              - link "Home" [ref=e439] [cursor=pointer]:
+                - /url: "#hero"
+            - listitem [ref=e440]:
+              - link "About Us" [ref=e441] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e442]:
+              - link "Programs" [ref=e443] [cursor=pointer]:
+                - /url: "#programs"
+            - listitem [ref=e444]:
+              - link "Why Us" [ref=e445] [cursor=pointer]:
+                - /url: "#benefits"
+            - listitem [ref=e446]:
+              - link "Testimonials" [ref=e447] [cursor=pointer]:
+                - /url: "#stories"
+            - listitem [ref=e448]:
+              - link "FAQ" [ref=e449] [cursor=pointer]:
+                - /url: "#faq"
+        - generic [ref=e450]:
+          - heading "Explore" [level=4] [ref=e451]
+          - list [ref=e452]:
+            - listitem [ref=e453]:
+              - link "Results" [ref=e454] [cursor=pointer]:
+                - /url: "#achievements"
+            - listitem [ref=e455]:
+              - link "Gallery" [ref=e456] [cursor=pointer]:
+                - /url: /gallery
+            - listitem [ref=e457]:
+              - link "Services" [ref=e458] [cursor=pointer]:
+                - /url: "#services"
+        - generic [ref=e459]:
+          - heading "Contact" [level=4] [ref=e460]
+          - list [ref=e461]:
+            - listitem [ref=e462]:
+              - link "info@vidyabharati.edu.in" [ref=e463] [cursor=pointer]:
+                - /url: mailto:info@vidyabharati.edu.in
+            - listitem [ref=e464]:
+              - link "+91 11 2345 6789" [ref=e465] [cursor=pointer]:
+                - /url: tel:+911123456789
+            - listitem [ref=e466]:
+              - link "Sector 15, Gurugram, Haryana" [ref=e467] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e468]:
+          - heading "Connect" [level=4] [ref=e469]
+          - generic [ref=e470]:
+            - paragraph [ref=e471]: Subscribe to our newsletter
+            - generic [ref=e472]:
+              - textbox "Email Address" [ref=e473]
+              - button "Send" [ref=e474] [cursor=pointer]
+      - generic [ref=e475]:
+        - generic [ref=e476]:
+          - heading "Affiliation & Recognition" [level=4] [ref=e477]
+          - generic [ref=e478]:
+            - generic [ref=e479]:
+              - generic [ref=e480]: CBSE Affiliation No.
+              - generic [ref=e481]: 2730XXX
+            - generic [ref=e482]:
+              - generic [ref=e483]: School Code
+              - generic [ref=e484]: XXXXX
+            - generic [ref=e485]:
+              - generic [ref=e486]: Estd.
+              - generic [ref=e487]: "1995"
+            - generic [ref=e488]:
+              - generic [ref=e489]: Board
+              - generic [ref=e490]: CBSE, New Delhi
+            - generic [ref=e491]:
+              - generic [ref=e492]: Classes
+              - generic [ref=e493]: Nursery to XII
+        - iframe [ref=e495]:
+          
+      - generic [ref=e496]:
+        - paragraph [ref=e497]: © 2026 Vidya Bharati International School. All rights reserved.
+        - generic [ref=e498]:
+          - link "LinkedIn" [ref=e499] [cursor=pointer]:
+            - /url: "#"
+            - img "LinkedIn" [ref=e500]
+          - link "Instagram" [ref=e501] [cursor=pointer]:
+            - /url: "#"
+            - img "Instagram" [ref=e502]
+          - link "Twitter" [ref=e503] [cursor=pointer]:
+            - /url: "#"
+            - img "Twitter" [ref=e504]
+      - paragraph [ref=e506]: The information provided on this website is for general informational purposes only and does not constitute professional advice. Vidya Bharati International School strives to ensure the accuracy of all published content, including academic programmes, schedules, and policies, but reserves the right to make changes at any time without prior notice. Individual student outcomes may vary. Vidya Bharati International School does not discriminate on the basis of race, colour, religion, gender, national origin, or disability in its educational programmes, activities, or employment practices.
+  - button "Open Next.js Dev Tools" [ref=e512] [cursor=pointer]:
+    - img [ref=e513]

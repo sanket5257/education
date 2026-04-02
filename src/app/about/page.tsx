@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { gsap, ScrollTrigger } from "@/lib/animations";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
@@ -73,6 +74,52 @@ const values = [
     desc: "Students develop self-belief and leadership through holistic activities.",
   },
 ];
+
+const missionWords =
+  "Our mission is to create a safe, disciplined, & nurturing environment where students feel supported & encouraged to explore the world around them. We focus on building strong foundations for lifelong learning through academics, creativity, & meaningful experiences.".split(
+    " "
+  );
+
+function MissionText() {
+  const containerRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const words = containerRef.current.querySelectorAll(".mission-word");
+
+    gsap.fromTo(
+      words,
+      { color: "rgba(34,34,34,0.15)" },
+      {
+        color: "rgba(34,34,34,1)",
+        stagger: 0.04,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: 1,
+        },
+      }
+    );
+  }, []);
+
+  return (
+    <p
+      ref={containerRef}
+      className="font-heading text-[22px] md:text-[32px] lg:text-[40px] leading-[1.3] max-w-[900px]"
+    >
+      {missionWords.map((word, i) => (
+        <span
+          key={i}
+          className="mission-word"
+          style={{ color: "rgba(34,34,34,0.15)", display: "inline-block", marginRight: "0.3em" }}
+        >
+          {word}
+        </span>
+      ))}
+    </p>
+  );
+}
 
 export default function AboutPage() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
@@ -170,16 +217,7 @@ export default function AboutPage() {
         >
           <div className="container flex flex-col items-center text-center gap-10">
             <span className="section-label">About Our School</span>
-            <p
-              className="font-heading text-[22px] md:text-[32px] lg:text-[40px] leading-[1.3] max-w-[900px]"
-              style={{ color: "var(--color-text-primary)" }}
-            >
-              Our mission is to create a safe, disciplined, &amp; nurturing
-              environment where students feel supported &amp; encouraged to
-              explore the world around them. We focus on building strong
-              foundations for lifelong learning through academics, creativity,
-              &amp; meaningful experiences.
-            </p>
+            <MissionText />
             {/* Stats */}
             <div className="flex flex-wrap justify-center gap-10 md:gap-20 pt-4">
               {stats.map((s, i) => (
