@@ -82,6 +82,20 @@ export default function ContactPage() {
           toggleActions: "play none none none",
         },
       });
+
+      // Contact details cards
+      gsap.from(".contact-detail-card", {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".contact-details-section",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
     }, pageRef);
 
     return () => ctx.revert();
@@ -361,6 +375,169 @@ export default function ContactPage() {
                   </Button>
                 </form>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Contact Details + Map ── */}
+        <section
+          className="contact-details-section section-padding"
+          style={{ backgroundColor: "var(--color-bg-secondary)" }}
+        >
+          <div className="container">
+            {/* Section header */}
+            <div className="text-center mb-12">
+              <span className="section-label">Reach Us</span>
+              <h2
+                className="font-heading text-[28px] md:text-[36px] lg:text-[44px] leading-[1.15] mt-3"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                Our Contact Details
+              </h2>
+            </div>
+
+            {/* Cards grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-10">
+              {/* Address */}
+              <div
+                className="contact-detail-card rounded-[16px] p-6 flex flex-col gap-4"
+                style={{
+                  backgroundColor: "var(--color-bg-primary)",
+                  border: "1px solid var(--color-border)",
+                }}
+              >
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "var(--color-bg-dark)" }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h3
+                    className="font-heading text-[18px] md:text-[20px] mb-1"
+                    style={{ color: "var(--color-text-primary)" }}
+                  >
+                    Address
+                  </h3>
+                  <p className="text-sm" style={{ color: "var(--color-text-muted)", lineHeight: 1.6 }}>
+                    Sector 15, Gurugram,<br />Haryana, India
+                  </p>
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div
+                className="contact-detail-card rounded-[16px] p-6 flex flex-col gap-4"
+                style={{
+                  backgroundColor: "var(--color-bg-primary)",
+                  border: "1px solid var(--color-border)",
+                }}
+              >
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "var(--color-bg-dark)" }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3
+                    className="font-heading text-[18px] md:text-[20px] mb-1"
+                    style={{ color: "var(--color-text-primary)" }}
+                  >
+                    Phone
+                  </h3>
+                  <a
+                    href="tel:+911123456789"
+                    className="text-sm hover:underline"
+                    style={{ color: "var(--color-text-muted)", lineHeight: 1.6 }}
+                  >
+                    +91 11 2345 6789
+                  </a>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div
+                className="contact-detail-card rounded-[16px] p-6 flex flex-col gap-4"
+                style={{
+                  backgroundColor: "var(--color-bg-primary)",
+                  border: "1px solid var(--color-border)",
+                }}
+              >
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "var(--color-bg-dark)" }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div>
+                  <h3
+                    className="font-heading text-[18px] md:text-[20px] mb-1"
+                    style={{ color: "var(--color-text-primary)" }}
+                  >
+                    Email
+                  </h3>
+                  <a
+                    href="mailto:info@vidyabharati.edu.in"
+                    className="text-sm hover:underline"
+                    style={{ color: "var(--color-text-muted)", lineHeight: 1.6 }}
+                  >
+                    info@vidyabharati.edu.in
+                  </a>
+                </div>
+              </div>
+
+              {/* Working Hours */}
+              <div
+                className="contact-detail-card rounded-[16px] p-6 flex flex-col gap-4"
+                style={{
+                  backgroundColor: "var(--color-bg-primary)",
+                  border: "1px solid var(--color-border)",
+                }}
+              >
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: "var(--color-bg-dark)" }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div>
+                  <h3
+                    className="font-heading text-[18px] md:text-[20px] mb-1"
+                    style={{ color: "var(--color-text-primary)" }}
+                  >
+                    Working Hours
+                  </h3>
+                  <p className="text-sm" style={{ color: "var(--color-text-muted)", lineHeight: 1.6 }}>
+                    Mon – Sat: 8:00 AM – 3:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div className="rounded-[16px] overflow-hidden" style={{ aspectRatio: "21 / 9", border: "1px solid var(--color-border)" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.0!2d77.03!3d28.46!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzM2LjAiTiA3N8KwMDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Vidya Bharati International School Location"
+              />
             </div>
           </div>
         </section>
