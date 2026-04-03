@@ -33,59 +33,62 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
         scrollTrigger: { trigger: "[data-hero-cards]", start: "top 85%", toggleActions: "play none none none" },
       });
 
-      // Video animation: desktop only (lg breakpoint)
-      const video = videoRef.current;
-      const cardsRow = document.querySelector("[data-hero-cards]") as HTMLElement;
-      if (!video || !cardsRow || window.innerWidth < 1024) return;
+      // Video animation: desktop only (lg breakpoint) using matchMedia
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        const video = videoRef.current;
+        const cardsRow = document.querySelector("[data-hero-cards]") as HTMLElement;
+        if (!video || !cardsRow) return;
 
-      const cardsH = cardsRow.offsetHeight;
-      const videoH = video.offsetHeight;
-      const containerW = cardsRow.offsetWidth;
+        const cardsH = cardsRow.offsetHeight;
+        const videoH = video.offsetHeight;
+        const containerW = cardsRow.offsetWidth;
 
-      // Scale down to match 1/3 card width and cards height
-      const sX = (containerW / 3) / video.offsetWidth;
-      const sY = cardsH / videoH;
+        // Scale down to match 1/3 card width and cards height
+        const sX = (containerW / 3) / video.offsetWidth;
+        const sY = cardsH / videoH;
 
-      // Calculate yPercent to position scaled video over the middle card
-      const cardsRect = cardsRow.getBoundingClientRect();
-      const videoRect = video.getBoundingClientRect();
-      const middleCardCenterY = cardsRect.top + cardsH / 2;
-      const videoCenterY = videoRect.top + videoH / 2;
-      const yPercent = ((middleCardCenterY - videoCenterY) / videoH) * 100;
+        // Calculate yPercent to position scaled video over the middle card
+        const cardsRect = cardsRow.getBoundingClientRect();
+        const videoRect = video.getBoundingClientRect();
+        const middleCardCenterY = cardsRect.top + cardsH / 2;
+        const videoCenterY = videoRect.top + videoH / 2;
+        const yPercent = ((middleCardCenterY - videoCenterY) / videoH) * 100;
 
-      gsap.set(video, {
-        scaleX: sX,
-        scaleY: sY,
-        yPercent,
-        borderRadius: 12,
-        transformOrigin: "center center",
-      });
+        gsap.set(video, {
+          scaleX: sX,
+          scaleY: sY,
+          yPercent,
+          borderRadius: 12,
+          transformOrigin: "center center",
+        });
 
-      // Phase 1: move down, Phase 2: expand
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "[data-video-section]",
-          start: "top 80%",
-          end: "top 20%",
-          scrub: 0.5,
-        },
-      });
+        // Phase 1: move down, Phase 2: expand
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "[data-video-section]",
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 0.5,
+          },
+        });
 
-      // Phase 1: slide down from cards area (35% of scroll)
-      tl.to(video, {
-        yPercent: yPercent * 0.15,
-        duration: 0.35,
-        ease: "none",
-      });
+        // Phase 1: slide down from cards area (35% of scroll)
+        tl.to(video, {
+          yPercent: yPercent * 0.15,
+          duration: 0.35,
+          ease: "none",
+        });
 
-      // Phase 2: expand to full size at natural position (65% of scroll)
-      tl.to(video, {
-        scaleX: 1,
-        scaleY: 1,
-        yPercent: 0,
-        borderRadius: 24,
-        duration: 0.65,
-        ease: "none",
+        // Phase 2: expand to full size at natural position (65% of scroll)
+        tl.to(video, {
+          scaleX: 1,
+          scaleY: 1,
+          yPercent: 0,
+          borderRadius: 24,
+          duration: 0.65,
+          ease: "none",
+        });
       });
 
     }, wrapperRef);
@@ -206,12 +209,12 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
       </section>
 
       {/* Video Section — its own section, equal padding top & bottom */}
-      <section data-video-section className="bg-bg-primary py-10 lg:py-20">
+      <section data-video-section className="bg-bg-primary px-4 py-6 md:px-6 md:py-10 lg:px-0 lg:py-20">
         <div className="container">
           <div
             ref={videoRef}
             className="relative w-full overflow-hidden rounded-[12px] lg:rounded-[24px]"
-            style={{ height: "clamp(300px, 60vh, calc(100vh - 160px))", zIndex: 3 }}
+            style={{ height: "clamp(220px, 50vh, calc(100vh - 160px))", zIndex: 3 }}
           >
             <video
               autoPlay
