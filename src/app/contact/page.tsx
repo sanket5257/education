@@ -107,7 +107,7 @@ export default function ContactPage() {
       <main>
         {/* ── Cloud Hero Section (Lilstep-style) ── */}
         <section
-          className="relative "
+          className="relative overflow-hidden"
           style={{
             backgroundColor: "#FAF6E6",
             backgroundImage: "url(/images/contact-hero/bg-pattern.svg)",
@@ -209,7 +209,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-stretch">
               {/* Left: Dark card */}
               <div
-                className="contact-hero-left relative overflow-hidden rounded-[20px] p-8 md:p-12 flex flex-col justify-end min-h-[320px] md:min-h-[480px]"
+                className="contact-hero-left relative overflow-hidden rounded-[20px] p-8 md:p-12 flex flex-col justify-end min-h-[400px] md:min-h-[600px]"
                 style={{ backgroundColor: "#003B20" }}
               >
                 <Image
@@ -235,7 +235,7 @@ export default function ContactPage() {
 
               {/* Right: Contact form */}
               <div
-                className="contact-hero-right rounded-[20px] p-6 md:p-10"
+                className="contact-hero-right rounded-[20px] p-6 md:p-10 flex flex-col justify-center"
                 style={{
                   backgroundColor: "var(--color-bg-secondary)",
                   border: "1px solid var(--color-border)",
@@ -248,7 +248,7 @@ export default function ContactPage() {
                   Submit Your Query
                 </h2>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   {/* Name + Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -264,7 +264,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
+                        className="w-full rounded-[6px] px-4 py-3.5 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
                         style={{
                           backgroundColor: "var(--color-bg-primary)",
                           border: "0.8px solid var(--color-border-light)",
@@ -286,7 +286,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
+                        className="w-full rounded-[6px] px-4 py-3.5 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
                         style={{
                           backgroundColor: "var(--color-bg-primary)",
                           border: "0.8px solid var(--color-border-light)",
@@ -312,7 +312,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
+                        className="w-full rounded-[6px] px-4 py-3.5 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
                         style={{
                           backgroundColor: "var(--color-bg-primary)",
                           border: "0.8px solid var(--color-border-light)",
@@ -334,7 +334,7 @@ export default function ContactPage() {
                         value={formData.location}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
+                        className="w-full rounded-[6px] px-4 py-3.5 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
                         style={{
                           backgroundColor: "var(--color-bg-primary)",
                           border: "0.8px solid var(--color-border-light)",
@@ -358,7 +358,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={4}
+                      rows={6}
                       className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 resize-none"
                       style={{
                         backgroundColor: "var(--color-bg-primary)",

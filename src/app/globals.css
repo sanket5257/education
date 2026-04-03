@@ -49,6 +49,7 @@ html.lenis, html.lenis body {
 
 html {
   scroll-padding-top: 80px;
+  overflow-x: hidden;
 }
 
 .scrollbar-hide {

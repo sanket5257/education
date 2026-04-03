@@ -220,17 +220,17 @@ export default function AboutPage() {
             <span className="section-label">About Our School</span>
             <MissionText />
             {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-10 md:gap-20 pt-4">
+            <div className="grid grid-cols-3 gap-4 md:gap-20 pt-4 w-full max-w-[700px]">
               {stats.map((s, i) => (
-                <div key={i} className="flex items-center gap-3">
+                <div key={i} className="flex flex-col items-center text-center md:flex-row md:text-left gap-1 md:gap-3">
                   <span
-                    className="font-heading text-[40px] md:text-[56px] leading-none"
+                    className="font-heading text-[28px] sm:text-[40px] md:text-[56px] leading-none"
                     style={{ color: "var(--color-text-primary)" }}
                   >
                     {s.value}
                   </span>
                   <span
-                    className="text-[11px] font-semibold uppercase tracking-wider text-left whitespace-pre-line"
+                    className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider whitespace-pre-line"
                     style={{ color: "var(--color-text-muted)" }}
                   >
                     {s.label}

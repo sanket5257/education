@@ -83,8 +83,8 @@ export default function About() {
         >
           {/* Main photo - offset left 10%, 90% width like reference */}
           <div
-            className="relative ml-12 overflow-hidden"
-            style={{ borderRadius: 32, aspectRatio: "598 / 700", width: "80%" }}
+            className="relative ml-0 md:ml-12 overflow-hidden w-full md:w-[80%]"
+            style={{ borderRadius: 32, aspectRatio: "598 / 700" }}
           >
             <Image
               src="/images/lifestyle/about-hero.jpg"
