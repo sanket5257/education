@@ -6,6 +6,7 @@ import { gsap, ScrollTrigger } from "@/lib/animations";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
+import Button from "@/components/Button";
 
 const stats = [
   { value: "2500+", label: "STUDENTS\nENROLLED" },
@@ -426,8 +427,8 @@ export default function AboutPage() {
               style={{ minHeight: 400 }}
             >
               <Image
-                src="https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a01dfada358ce32a453a32_About-Futuer-4.avif"
-                alt="Children learning"
+                src="https://i.pinimg.com/1200x/be/e7/a1/bee7a18617a66cc64ea30640b570e9d9.jpg"
+                alt="Students at Vidya Bharati"
                 fill
                 sizes="100vw"
                 className="object-cover"
@@ -441,13 +442,9 @@ export default function AboutPage() {
                   Join our nurturing community of learners!
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
-                  <button
-                    onClick={() => setEnquiryOpen(true)}
-                    className="px-7 py-3.5 rounded-[8px] text-sm font-medium cursor-pointer transition-opacity hover:opacity-90"
-                    style={{ backgroundColor: "var(--color-bg-dark)", color: "#fff" }}
-                  >
+                  <Button variant="primary" onClick={() => setEnquiryOpen(true)}>
                     Enquire Now
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
