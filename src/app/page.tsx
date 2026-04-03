@@ -11,6 +11,7 @@ import Achievements from "@/components/Achievements";
 
 import SuccessStories from "@/components/SuccessStories";
 import FAQ from "@/components/FAQ";
+import Social from "@/components/Social";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
@@ -27,10 +28,12 @@ export default function Home() {
         <Programs />
         <Principal />
         <Benefits />
+         <Social />
         <Achievements />
     
         <SuccessStories />
         <FAQ />
+       
         <CTA onEnquiryOpen={() => setEnquiryOpen(true)} />
       </main>
       <Footer onEnquiryOpen={() => setEnquiryOpen(true)} />
