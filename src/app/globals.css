@@ -184,6 +184,45 @@ img {
   animation: marquee 20s linear infinite;
 }
 
+/* Cloud drift animation for contact hero */
+@keyframes cloud-drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes cloud-drift-reverse {
+  0% { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-cloud-drift {
+  animation: cloud-drift 40s linear infinite;
+}
+
+.animate-cloud-drift-slow {
+  animation: cloud-drift 60s linear infinite;
+}
+
+.animate-cloud-drift-reverse {
+  animation: cloud-drift-reverse 50s linear infinite;
+}
+
+/* Floating icon bob animation */
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float-bob-alt {
+  0%, 100% { transform: translateY(0px) rotate(-5deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes float-bob-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
 /* FAQ Accordion */
 .faq-answer {
   max-height: 0;
