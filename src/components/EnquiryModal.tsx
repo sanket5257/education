@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import Button from "@/components/Button";
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -177,13 +178,9 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
             />
           </div>
 
-          <button
-            type="submit"
-            className="btn btn-dark w-full justify-center mt-2"
-            style={{ padding: "14px 24px", fontSize: 15 }}
-          >
+          <Button type="submit" variant="dark" fullWidth className="mt-2">
             Submit Enquiry
-          </button>
+          </Button>
 
           <p className="text-center" style={{ fontSize: 12, color: "var(--color-text-muted)" }}>
             Or call us directly at{" "}

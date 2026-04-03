@@ -11,6 +11,7 @@ interface ButtonProps {
   fullWidth?: boolean;
   className?: string;
   onClick?: () => void;
+  type?: "button" | "submit" | "reset";
 }
 
 const variantConfig: Record<
@@ -47,6 +48,7 @@ export default function Button({
   fullWidth = false,
   className = "",
   onClick,
+  type = "button",
 }: ButtonProps) {
   const config = variantConfig[variant];
 
@@ -101,7 +103,7 @@ export default function Button({
   }
 
   return (
-    <button className={baseClasses} style={inlineStyle} onClick={onClick}>
+    <button type={type} className={baseClasses} style={inlineStyle} onClick={onClick}>
       {content}
     </button>
   );
