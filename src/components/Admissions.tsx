@@ -103,7 +103,7 @@ export default function Admissions() {
             <em className="italic">Journey</em>
           </h2>
           <div className="pt-4" />
-          <p className="mx-auto max-w-[600px]" style={{ fontSize: 16, lineHeight: 1.6, color: "var(--color-text-muted)" }}>
+          <p className="mx-auto max-w-[600px] text-base leading-[1.6] text-text-muted">
             Applications for the 2026–27 academic session are now open for Nursery through Class XI.
             Follow the simple steps below or fill out the enquiry form.
           </p>
@@ -121,20 +121,18 @@ export default function Admissions() {
               {steps.map((step, i) => (
                 <div
                   key={step.number}
-                  className="admission-step flex gap-4 py-5"
-                  style={{ borderBottom: "0.8px solid var(--color-border-light)" }}
+                  className="admission-step flex gap-4 py-5 border-b-[0.8px] border-border-light"
                 >
                   <span
-                    className="shrink-0 font-heading text-[28px] md:text-[36px] leading-none"
-                    style={{ color: "var(--color-border-light)" }}
+                    className="shrink-0 font-heading text-[28px] md:text-[36px] leading-none text-border-light"
                   >
                     {step.number}
                   </span>
                   <div>
-                    <p className="font-medium text-[15px] md:text-[16px] mb-1" style={{ color: "var(--color-text-primary)" }}>
+                    <p className="font-medium text-[15px] md:text-[16px] mb-1 text-text-primary">
                       {step.title}
                     </p>
-                    <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--color-text-muted)" }}>
+                    <p className="text-sm leading-[1.6] text-text-muted">
                       {step.description}
                     </p>
                   </div>
@@ -147,20 +145,19 @@ export default function Admissions() {
           {/* Right: Enquiry Form */}
           <div>
             <div
-              className="admission-form-card rounded-[12px] p-6 md:p-8"
-              style={{ backgroundColor: "var(--color-bg-secondary)", border: "0.8px solid var(--color-border-light)" }}
+              className="admission-form-card rounded-[12px] p-6 md:p-8 bg-bg-secondary border-[0.8px] border-border-light"
             >
               <h3 className="font-heading text-[22px] md:text-[28px] leading-[1.2] mb-2">
                 Admission <em className="italic">Enquiry</em>
               </h3>
-              <p className="mb-6" style={{ fontSize: 14, color: "var(--color-text-muted)", lineHeight: 1.5 }}>
+              <p className="mb-6 text-sm text-text-muted leading-normal">
                 Fill in your details and our admissions team will reach out within 24 hours.
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 {/* Parent Name */}
                 <div>
-                  <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+                  <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
                     Parent / Guardian Name
                   </label>
                   <input
@@ -169,8 +166,7 @@ export default function Admissions() {
                     value={formData.parentName}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
-                    style={{ backgroundColor: "var(--color-bg-primary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+                    className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 bg-bg-primary border-[0.8px] border-border-light text-text-primary"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -178,7 +174,7 @@ export default function Admissions() {
                 {/* Phone + Email row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+                    <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
                       Phone Number
                     </label>
                     <input
@@ -187,13 +183,12 @@ export default function Admissions() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
-                      style={{ backgroundColor: "var(--color-bg-primary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+                      className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 bg-bg-primary border-[0.8px] border-border-light text-text-primary"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+                    <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
                       Email Address
                     </label>
                     <input
@@ -202,8 +197,7 @@ export default function Admissions() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
-                      style={{ backgroundColor: "var(--color-bg-primary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+                      className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 bg-bg-primary border-[0.8px] border-border-light text-text-primary"
                       placeholder="parent@email.com"
                     />
                   </div>
@@ -211,7 +205,7 @@ export default function Admissions() {
 
                 {/* Student Name */}
                 <div>
-                  <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+                  <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
                     Student Name
                   </label>
                   <input
@@ -220,15 +214,14 @@ export default function Admissions() {
                     value={formData.studentName}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
-                    style={{ backgroundColor: "var(--color-bg-primary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+                    className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 bg-bg-primary border-[0.8px] border-border-light text-text-primary"
                     placeholder="Enter student's name"
                   />
                 </div>
 
                 {/* Class Applying For */}
                 <div>
-                  <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+                  <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
                     Class Applying For
                   </label>
                   <select
@@ -236,8 +229,7 @@ export default function Admissions() {
                     value={formData.classApplying}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 cursor-pointer"
-                    style={{ backgroundColor: "var(--color-bg-primary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+                    className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 cursor-pointer bg-bg-primary border-[0.8px] border-border-light text-text-primary"
                   >
                     <option value="">Select Class</option>
                     <option value="nursery">Nursery</option>
@@ -251,7 +243,7 @@ export default function Admissions() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+                  <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
                     Message (Optional)
                   </label>
                   <textarea
@@ -259,8 +251,7 @@ export default function Admissions() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={3}
-                    className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 resize-none"
-                    style={{ backgroundColor: "var(--color-bg-primary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+                    className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 resize-none bg-bg-primary border-[0.8px] border-border-light text-text-primary"
                     placeholder="Any specific questions or requirements..."
                   />
                 </div>
@@ -268,15 +259,14 @@ export default function Admissions() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="btn btn-dark w-full justify-center mt-2"
-                  style={{ padding: "14px 24px", fontSize: 15 }}
+                  className="btn btn-dark w-full justify-center mt-2 py-3.5 px-6 text-[15px]"
                 >
                   Submit Enquiry
                 </button>
 
-                <p className="text-center" style={{ fontSize: 12, color: "var(--color-text-muted)" }}>
+                <p className="text-center text-xs text-text-muted">
                   Or call us directly at{" "}
-                  <a href="tel:+911123456789" className="font-medium underline" style={{ color: "var(--color-text-primary)" }}>
+                  <a href="tel:+911123456789" className="font-medium underline text-text-primary">
                     +91 11 2345 6789
                   </a>
                 </p>

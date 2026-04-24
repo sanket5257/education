@@ -66,8 +66,7 @@ export default function Gallery() {
     <section
       id="gallery"
       ref={sectionRef}
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      className="section-padding bg-bg-secondary"
     >
       <div className="container">
         {/* Header */}
@@ -80,7 +79,7 @@ export default function Gallery() {
               <em className="italic">Campus</em>
             </h2>
             <div className="pt-3" />
-            <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--color-text-muted)", maxWidth: 500 }}>
+            <p className="text-base leading-[1.6] text-text-muted max-w-[500px]">
               A glimpse into everyday life at Vidya Bharati — our classrooms,
               events, sports, and the spaces where students grow.
             </p>
@@ -92,18 +91,11 @@ export default function Gallery() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className="rounded-[6px] px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer"
-                style={{
-                  backgroundColor:
-                    activeCategory === cat
-                      ? "var(--color-bg-dark)"
-                      : "var(--color-bg-primary)",
-                  color:
-                    activeCategory === cat
-                      ? "var(--color-text-light)"
-                      : "var(--color-text-primary)",
-                  border: "0.8px solid var(--color-border-light)",
-                }}
+                className={`rounded-[6px] px-4 py-2 text-sm font-medium transition-all duration-300 cursor-pointer border-[0.8px] border-border-light ${
+                  activeCategory === cat
+                    ? "bg-bg-dark text-text-light"
+                    : "bg-bg-primary text-text-primary"
+                }`}
               >
                 {cat}
               </button>
@@ -116,11 +108,9 @@ export default function Gallery() {
           {filteredItems.map((item, i) => (
             <div
               key={`${item.src}-${activeCategory}`}
-              className="group relative overflow-hidden rounded-[6px] cursor-pointer"
-              style={{
-                aspectRatio: i % 5 === 0 ? "4 / 5" : "1 / 1",
-                gridRow: i % 5 === 0 ? "span 2" : undefined,
-              }}
+              className={`group relative overflow-hidden rounded-[6px] cursor-pointer ${
+                i % 5 === 0 ? "aspect-[4/5] row-span-2" : "aspect-square"
+              }`}
             >
               <Image
                 src={item.src}

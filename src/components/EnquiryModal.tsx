@@ -53,8 +53,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
 
       {/* Modal */}
       <div
-        className="relative w-full max-w-[500px] max-h-[90vh] overflow-y-auto rounded-[12px] p-6 md:p-8"
-        style={{ backgroundColor: "var(--color-bg-primary)", border: "1px solid var(--color-border-light)" }}
+        className="relative w-full max-w-[500px] max-h-[90vh] overflow-y-auto rounded-[12px] p-6 md:p-8 bg-bg-primary border border-border-light"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -63,19 +62,19 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
           className="absolute top-4 right-4 p-1 rounded-full transition-colors duration-200 hover:bg-black/5"
           aria-label="Close"
         >
-          <X size={20} style={{ color: "var(--color-text-muted)" }} />
+          <X size={20} className="text-text-muted" />
         </button>
 
         <h3 className="font-heading text-[24px] md:text-[28px] leading-[1.2] mb-1">
           Admission <em className="italic">Enquiry</em>
         </h3>
-        <p className="mb-6" style={{ fontSize: 14, color: "var(--color-text-muted)", lineHeight: 1.5 }}>
+        <p className="mb-6 text-sm text-text-muted leading-normal">
           Fill in your details and our admissions team will reach out within 24 hours.
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
-            <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+            <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
               Parent / Guardian Name
             </label>
             <input
@@ -84,15 +83,14 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
               value={formData.parentName}
               onChange={handleChange}
               required
-              className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
-              style={{ backgroundColor: "var(--color-bg-secondary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+              className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 bg-bg-secondary border-[0.8px] border-border-light text-text-primary"
               placeholder="Enter your full name"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+              <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
                 Phone Number
               </label>
               <input
@@ -101,13 +99,12 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
-                style={{ backgroundColor: "var(--color-bg-secondary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+                className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 bg-bg-secondary border-[0.8px] border-border-light text-text-primary"
                 placeholder="+91 98765 43210"
               />
             </div>
             <div>
-              <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+              <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
                 Email Address
               </label>
               <input
@@ -116,15 +113,14 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
-                style={{ backgroundColor: "var(--color-bg-secondary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+                className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 bg-bg-secondary border-[0.8px] border-border-light text-text-primary"
                 placeholder="parent@email.com"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+            <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
               Student Name
             </label>
             <input
@@ -133,14 +129,13 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
               value={formData.studentName}
               onChange={handleChange}
               required
-              className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10"
-              style={{ backgroundColor: "var(--color-bg-secondary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+              className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 bg-bg-secondary border-[0.8px] border-border-light text-text-primary"
               placeholder="Enter student's name"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+            <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
               Class Applying For
             </label>
             <select
@@ -148,8 +143,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
               value={formData.classApplying}
               onChange={handleChange}
               required
-              className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 cursor-pointer"
-              style={{ backgroundColor: "var(--color-bg-secondary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+              className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 cursor-pointer bg-bg-secondary border-[0.8px] border-border-light text-text-primary"
             >
               <option value="">Select Class</option>
               <option value="nursery">Nursery</option>
@@ -164,7 +158,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
           </div>
 
           <div>
-            <label className="block text-xs font-medium uppercase tracking-wider mb-1.5" style={{ color: "var(--color-text-muted)" }}>
+            <label className="block text-xs font-medium uppercase tracking-wider mb-1.5 text-text-muted">
               Message (Optional)
             </label>
             <textarea
@@ -172,8 +166,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
               value={formData.message}
               onChange={handleChange}
               rows={3}
-              className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 resize-none"
-              style={{ backgroundColor: "var(--color-bg-secondary)", border: "0.8px solid var(--color-border-light)", color: "var(--color-text-primary)" }}
+              className="w-full rounded-[6px] px-4 py-3 text-sm outline-none transition-all duration-300 focus:ring-2 focus:ring-black/10 resize-none bg-bg-secondary border-[0.8px] border-border-light text-text-primary"
               placeholder="Any specific questions or requirements..."
             />
           </div>
@@ -182,9 +175,9 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
             Submit Enquiry
           </Button>
 
-          <p className="text-center" style={{ fontSize: 12, color: "var(--color-text-muted)" }}>
+          <p className="text-center text-xs text-text-muted">
             Or call us directly at{" "}
-            <a href="tel:+911123456789" className="font-medium underline" style={{ color: "var(--color-text-primary)" }}>
+            <a href="tel:+911123456789" className="font-medium underline text-text-primary">
               +91 11 2345 6789
             </a>
           </p>

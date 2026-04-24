@@ -96,42 +96,25 @@ export default function Blog() {
     <section
       id="blog"
       ref={sectionRef}
-      className="py-[var(--section-padding-y)] px-[var(--section-padding-x)]"
-      style={{ backgroundColor: "var(--color-bg-primary)" }}
+      className="py-[var(--section-padding-y)] px-[var(--section-padding-x)] bg-bg-primary"
     >
       <div
-        className="mx-auto w-full"
-        style={{ maxWidth: "var(--container-max)" }}
+        className="mx-auto w-full max-w-[var(--container-max)]"
       >
         {/* Section Header */}
         <div ref={headerRef} className="text-center mb-12">
           <span className="section-label mb-4 block">School News</span>
           <h2
-            className="mb-4"
-            style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: "var(--text-3xl)",
-              lineHeight: 1.2,
-            }}
+            className="mb-4 font-heading text-3xl leading-[1.2]"
           >
             Latest From{" "}
-            <em
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontStyle: "italic",
-              }}
+            <em className="font-heading italic"
             >
               Vidya Bharati
             </em>
           </h2>
           <p
-            className="mx-auto"
-            style={{
-              fontSize: "var(--text-base)",
-              color: "var(--color-text-muted)",
-              lineHeight: 1.6,
-              maxWidth: 600,
-            }}
+            className="mx-auto text-base text-text-muted leading-[1.6] max-w-[600px]"
           >
             Stay updated with the latest news, student achievements, and
             important announcements from Vidya Bharati International School.
@@ -143,53 +126,30 @@ export default function Blog() {
           {blogPosts.map((post, index) => (
             <div
               key={post.title}
-              className="flex flex-col sm:flex-row gap-6 py-8"
-              style={
-                index < blogPosts.length - 1
-                  ? { borderBottom: "1px solid var(--color-border)" }
-                  : undefined
-              }
+              className={`flex flex-col sm:flex-row gap-6 py-8 ${index < blogPosts.length - 1 ? "border-b border-border" : ""}`}
             >
               {/* Image Thumbnail */}
               <div
-                className="shrink-0 overflow-hidden relative"
-                style={{
-                  width: 200,
-                  height: 140,
-                  borderRadius: "var(--radius-md)",
-                }}
+                className="shrink-0 overflow-hidden relative w-[200px] h-[140px] rounded-[var(--radius-md)]"
               >
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
                   sizes="200px"
-                  className="object-cover"
-                  style={{ borderRadius: "var(--radius-md)" }}
+                  className="object-cover rounded-[var(--radius-md)]"
                 />
               </div>
 
               {/* Content */}
               <div className="flex flex-col justify-between flex-1">
                 <div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-heading)",
-                      fontSize: "var(--text-xl)",
-                      color: "var(--color-text-primary)",
-                      lineHeight: 1.3,
-                      marginBottom: 8,
-                    }}
+                  <h3 className="font-heading text-xl text-text-primary leading-[1.3] mb-2"
                   >
                     {post.title}
                   </h3>
                   <p
-                    className="line-clamp-2"
-                    style={{
-                      fontSize: "var(--text-sm)",
-                      color: "var(--color-text-muted)",
-                      lineHeight: 1.5,
-                    }}
+                    className="line-clamp-2 text-sm text-text-muted leading-normal"
                   >
                     {post.description}
                   </p>
@@ -197,25 +157,11 @@ export default function Blog() {
 
                 {/* Date + Category */}
                 <div className="flex items-center gap-3 mt-4">
-                  <span
-                    style={{
-                      fontSize: "var(--text-xs)",
-                      backgroundColor: "var(--color-bg-secondary)",
-                      padding: "4px 12px",
-                      borderRadius: "var(--radius-sm)",
-                      color: "var(--color-text-secondary)",
-                    }}
+                  <span className="text-xs bg-bg-secondary py-1 px-3 rounded-[var(--radius-sm)] text-text-secondary"
                   >
                     {post.date}
                   </span>
-                  <span
-                    style={{
-                      fontSize: "var(--text-xs)",
-                      textTransform: "uppercase",
-                      color: "var(--color-text-secondary)",
-                      letterSpacing: "0.05em",
-                      fontWeight: 500,
-                    }}
+                  <span className="text-xs uppercase text-text-secondary tracking-[0.05em] font-medium"
                   >
                     {post.category}
                   </span>

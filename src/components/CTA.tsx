@@ -48,15 +48,11 @@ export default function CTA({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
     <section
       id="contact"
       ref={sectionRef}
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-primary)" }}
+      className="section-padding bg-bg-primary"
     >
       <div className="container">
         <div
-          className="rounded-[12px] flex flex-col items-center text-center relative overflow-hidden"
-          style={{
-            padding: "clamp(32px, 8vw, 64px) clamp(16px, 4vw, 32px)",
-          }}
+          className="rounded-[12px] flex flex-col items-center text-center relative overflow-hidden py-[clamp(32px,8vw,64px)] px-[clamp(16px,4vw,32px)]"
         >
           {/* Background Video */}
           <div className="absolute inset-0 bg-bg-dark" />
@@ -77,10 +73,7 @@ export default function CTA({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
           <div className="relative z-10 flex flex-col items-center">
           {/* Heading */}
           <h2
-            className="cta-animate mb-5 font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1] max-w-[600px]"
-            style={{
-              color: "var(--color-text-light)",
-            }}
+            className="cta-animate mb-5 font-heading text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1] max-w-[600px] text-text-light"
           >
             Begin your child&apos;s{" "}
             <em className="italic">journey</em>, today.
@@ -88,13 +81,7 @@ export default function CTA({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) {
 
           {/* Description */}
           <p
-            className="cta-animate mb-8"
-            style={{
-              fontSize: 16,
-              color: "rgba(255, 255, 255, 0.6)",
-              maxWidth: 500,
-              lineHeight: 1.6,
-            }}
+            className="cta-animate mb-8 text-base text-white/60 max-w-[500px] leading-[1.6]"
           >
             Applications for the 2026-27 academic session are now open. Secure
             your child&apos;s place at Vidya Bharati International School today.

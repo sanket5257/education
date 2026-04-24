@@ -145,8 +145,7 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
                     ].map((item) => (
                       <div
                         key={item.title}
-                        className="flex gap-3 py-3.5"
-                        style={{ borderBottom: "0.8px solid rgba(255,255,255,0.06)" }}
+                        className="flex gap-3 py-3.5 border-b-[0.8px] border-white/[0.06]"
                       >
                         <span className="shrink-0 text-xs text-white/30 min-w-[62px] pt-0.5">
                           {item.date}
@@ -170,11 +169,10 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
                 </div>
                 <a
                   href="#admissions"
-                  className="flex items-center justify-center gap-2 mt-4 rounded-[6px] py-3 text-sm font-medium transition-colors duration-300 hover:opacity-90"
-                  style={{ backgroundColor: "#FFFFFF", color: "#222222", border: "none" }}
+                  className="flex items-center justify-center gap-2 mt-4 rounded-[6px] py-3 text-sm font-medium transition-colors duration-300 hover:opacity-90 bg-white text-[#222222] border-none"
                 >
                   View All Updates
-                  <Image src="/images/icons/arrow-right.svg" alt="" width={14} height={14} style={{ opacity: 0.5, filter: "invert(1)" }} />
+                  <Image src="/images/icons/arrow-right.svg" alt="" width={14} height={14} className="opacity-50 invert" />
                 </a>
               </div>
 
@@ -187,7 +185,7 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
                 className="relative hidden lg:flex lg:w-1/3 min-h-[250px] lg:min-h-[500px] flex-col justify-end overflow-hidden rounded-[6px] p-3 md:p-5"
               >
                 <Image
-                  src="https://img.freepik.com/premium-photo/indian-school-students-group-sitting-classroom_130568-364.jpg?w=2000"
+                  src="/images/hero/students.jpg"
                   alt="Student achievement background"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
@@ -213,8 +211,7 @@ export default function Hero({ onEnquiryOpen }: { onEnquiryOpen?: () => void }) 
         <div className="container">
           <div
             ref={videoRef}
-            className="relative w-full overflow-hidden rounded-[12px] lg:rounded-[24px]"
-            style={{ height: "clamp(220px, 50vh, calc(100vh - 160px))", zIndex: 3 }}
+            className="relative w-full overflow-hidden rounded-[12px] lg:rounded-[24px] h-[clamp(220px,50vh,calc(100vh-160px))] z-[3]"
           >
             <video
               autoPlay

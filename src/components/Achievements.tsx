@@ -5,10 +5,10 @@ import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/animations";
 
 const toppers = [
-  { name: "Priya Mehta", score: "98.4%", stream: "Science", year: "2025", image: "https://i.pinimg.com/1200x/e1/ae/23/e1ae2318af93f4108da16f0eaae1bfb0.jpg" },
-  { name: "Arjun Reddy", score: "97.8%", stream: "Commerce", year: "2024", image: "https://i.pinimg.com/736x/80/a6/49/80a64977e4a4749d8ce504e54f186f0e.jpg" },
-  { name: "Sneha Iyer", score: "97.2%", stream: "Science", year: "2023", image: "https://i.pinimg.com/1200x/e1/ae/23/e1ae2318af93f4108da16f0eaae1bfb0.jpg" },
-  { name: "Rahul Sharma", score: "96.8%", stream: "Humanities", year: "2025", image: "https://i.pinimg.com/736x/80/a6/49/80a64977e4a4749d8ce504e54f186f0e.jpg" },
+  { name: "Priya Mehta", score: "98.4%", stream: "Science", year: "2025", image: "/images/achievements/topper-1.jpg" },
+  { name: "Arjun Reddy", score: "97.8%", stream: "Commerce", year: "2024", image: "/images/achievements/topper-2.jpg" },
+  { name: "Sneha Iyer", score: "97.2%", stream: "Science", year: "2023", image: "/images/achievements/topper-1.jpg" },
+  { name: "Rahul Sharma", score: "96.8%", stream: "Humanities", year: "2025", image: "/images/achievements/topper-2.jpg" },
 ];
 
 export default function Achievements() {
@@ -58,8 +58,7 @@ export default function Achievements() {
     <section
       id="achievements"
       ref={sectionRef}
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      className="section-padding bg-bg-secondary"
     >
       <div className="container">
         {/* Header */}
@@ -81,13 +80,12 @@ export default function Achievements() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="rounded-[8px] p-5 text-center bg-white"
-              style={{ border: "1px solid var(--color-border-light)" }}
+              className="rounded-[8px] p-5 text-center bg-white border border-border-light"
             >
-              <p className="font-heading text-[32px] md:text-[40px] leading-[1]" style={{ color: "var(--color-text-primary)" }}>
+              <p className="font-heading text-[32px] md:text-[40px] leading-[1] text-text-primary">
                 {stat.value}
               </p>
-              <p className="text-sm mt-1" style={{ color: "var(--color-text-muted)" }}>
+              <p className="text-sm mt-1 text-text-muted">
                 {stat.label}
               </p>
             </div>
@@ -101,24 +99,23 @@ export default function Achievements() {
           </h3>
           <div className="relative overflow-x-auto lg:overflow-hidden snap-x snap-mandatory lg:snap-none scrollbar-hide">
             {/* Fade edges */}
-            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 bottom-0 w-48 z-10" style={{ background: "linear-gradient(to right, var(--color-bg-secondary), transparent)" }} />
-            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 bottom-0 w-48 z-10" style={{ background: "linear-gradient(to left, var(--color-bg-secondary), transparent)" }} />
+            <div className="hidden lg:block pointer-events-none absolute left-0 top-0 bottom-0 w-48 z-10 bg-gradient-to-r from-bg-secondary to-transparent" />
+            <div className="hidden lg:block pointer-events-none absolute right-0 top-0 bottom-0 w-48 z-10 bg-gradient-to-l from-bg-secondary to-transparent" />
             <div ref={marqueeRef} className="flex whitespace-nowrap px-4 lg:px-0">
               {[...toppers, ...toppers].map((topper, i) => (
                 <div
                   key={`${topper.name}-${i}`}
-                  className="shrink-0 w-[75vw] md:w-[260px] mx-2 rounded-[8px] overflow-hidden bg-white whitespace-normal snap-center"
-                  style={{ border: "1px solid var(--color-border-light)" }}
+                  className="shrink-0 w-[75vw] md:w-[260px] mx-2 rounded-[8px] overflow-hidden bg-white whitespace-normal snap-center border border-border-light"
                 >
                   <div className="relative w-full aspect-[3/4]">
                     <Image src={topper.image} alt={topper.name} fill className="object-cover" />
                   </div>
                   <div className="p-4 text-center">
-                    <p className="font-medium text-sm" style={{ color: "var(--color-text-primary)" }}>{topper.name}</p>
-                    <p className="font-heading text-[28px] leading-tight mt-1" style={{ color: "var(--color-text-primary)" }}>
+                    <p className="font-medium text-sm text-text-primary">{topper.name}</p>
+                    <p className="font-heading text-[28px] leading-tight mt-1 text-text-primary">
                       {topper.score}
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: "var(--color-text-muted)" }}>
+                    <p className="text-xs mt-0.5 text-text-muted">
                       {topper.stream} &bull; {topper.year}
                     </p>
                   </div>

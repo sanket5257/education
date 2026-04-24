@@ -11,7 +11,7 @@ const programs = [
     description:
       "Engage in hands-on experiments, robotics challenges, and coding projects that bring science and technology to life in the classroom.",
     image:
-      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/699ecd0545a0dc4df09760ef_program-1.jpg",
+      "/images/programs/program-remote-1.jpg",
   },
   {
     tag: "All Classes",
@@ -19,7 +19,7 @@ const programs = [
     description:
       "Discover your creative voice through Indian classical music, dance, visual arts, and a rich exploration of Indian literature, Sanskrit, and history.",
     image:
-      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/699ecd41d869cc3853de182f_program-2.jpg",
+      "/images/programs/program-remote-2.jpg",
   },
   {
     tag: "Classes IX–XII",
@@ -27,7 +27,7 @@ const programs = [
     description:
       "Build a strong foundation for competitive entrance exams with advanced coaching in mathematics, physics, chemistry, and biology.",
     image:
-      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/69b139fe96eff708eae38605_program-3.jpg",
+      "/images/programs/program-remote-3.jpg",
   },
 ];
 
@@ -87,8 +87,7 @@ export default function Programs() {
     <section
       id="programs"
       ref={sectionRef}
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      className="section-padding bg-bg-secondary"
     >
       <div className="container">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
@@ -100,13 +99,7 @@ export default function Programs() {
                 Comprehensive Programs for{" "}
                 <em className="italic">Academic</em> Excellence
               </h2>
-              <p
-                style={{
-                  fontSize: 16,
-                  lineHeight: 1.6,
-                  color: "var(--color-text-muted)",
-                }}
-              >
+              <p className="text-base leading-[1.6] text-text-muted">
                 Our programs are designed to address every stage of learning.
                 From early foundations to competitive exam preparation, each
                 initiative focuses on creating well-rounded, confident students.
@@ -119,8 +112,7 @@ export default function Programs() {
             {programs.map((program) => (
               <div
                 key={program.heading}
-                className="program-card relative overflow-hidden rounded-[20px] md:rounded-[24px]"
-                style={{ minHeight: 560 }}
+                className="program-card relative overflow-hidden rounded-[20px] md:rounded-[24px] min-h-[560px]"
               >
                 {/* Background image */}
                 <Image
@@ -134,20 +126,11 @@ export default function Programs() {
                 {/* Frosted overlay card at bottom */}
                 <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                   <div
-                    className="rounded-[16px] p-5 md:p-6"
-                    style={{
-                      backgroundColor: "rgba(255, 253, 249, 0.88)",
-                      backdropFilter: "blur(16px)",
-                      WebkitBackdropFilter: "blur(16px)",
-                    }}
+                    className="rounded-[16px] p-5 md:p-6 bg-[rgba(255,253,249,0.88)] backdrop-blur-[16px]"
                   >
                     {/* Tag */}
                     <span
-                      className="inline-block text-[12px] font-medium px-3 py-1 rounded-full mb-3"
-                      style={{
-                        backgroundColor: "#FFF8E1",
-                        color: "var(--color-text-primary)",
-                      }}
+                      className="inline-block text-[12px] font-medium px-3 py-1 rounded-full mb-3 bg-[#FFF8E1] text-text-primary"
                     >
                       {program.tag}
                     </span>
@@ -158,13 +141,7 @@ export default function Programs() {
                     </h3>
 
                     {/* Description */}
-                    <p
-                      style={{
-                        fontSize: 14,
-                        lineHeight: 1.55,
-                        color: "var(--color-text-muted)",
-                      }}
-                    >
+                    <p className="text-sm leading-[1.55] text-text-muted">
                       {program.description}
                     </p>
                   </div>

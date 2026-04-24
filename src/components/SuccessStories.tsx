@@ -6,7 +6,7 @@ import { gsap } from "@/lib/animations";
 
 const featured = {
   image:
-    "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/699fd5da03d11366320731d9_c09f7ec1f7d3151ea3f0fbefde7eb5d7_Testimonials-img.jpg",
+    "/images/success/testimonial.jpg",
   quote:
     "Vidya Bharati's teaching approach completely transformed my daughter's confidence and love for learning.",
   name: "Priya Sharma",
@@ -17,7 +17,7 @@ const featured = {
 const sideCards = [
   {
     avatar:
-      "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/699e9c536b22e7795f27ecaa_affc75c2e0482b8c7c9e3b566dd7b3c5_join-1.avif",
+      "/images/success/join-1.avif",
     quote:
       "The IIT foundation classes gave my son a strong head start. He comes home excited every day!",
     name: "Rajesh Mehta",
@@ -26,7 +26,7 @@ const sideCards = [
   },
   {
     avatar:
-      "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a7eab9143dc8794ca312f9_testi-img-7.avif",
+      "/images/success/testi-7.avif",
     quote:
       "Finding a school that balances academics with Indian values was important — Vidya Bharati delivers both.",
     name: "Anita Reddy",
@@ -124,8 +124,7 @@ export default function SuccessStories() {
     <section
       id="stories"
       ref={sectionRef}
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      className="section-padding bg-bg-secondary"
     >
       <div className="container">
         {/* Header */}
@@ -158,12 +157,10 @@ export default function SuccessStories() {
             {/* Bottom overlay */}
             <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
               <div
-                className="rounded-[16px] p-5 md:p-6"
-                style={{ backgroundColor: "rgba(255, 253, 249, 0.92)", backdropFilter: "blur(12px)" }}
+                className="rounded-[16px] p-5 md:p-6 bg-[rgba(255,253,249,0.92)] backdrop-blur-[12px]"
               >
                 <p
-                  className="font-heading italic text-[17px] md:text-[20px] leading-[1.35] mb-5"
-                  style={{ color: "var(--color-text-primary)" }}
+                  className="font-heading italic text-[17px] md:text-[20px] leading-[1.35] mb-5 text-text-primary"
                 >
                   &ldquo;{featured.quote}&rdquo;
                 </p>
@@ -171,19 +168,18 @@ export default function SuccessStories() {
                   <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1.5">
                       <StarIcon />
-                      <span className="text-[22px] font-semibold" style={{ color: "var(--color-text-primary)" }}>
+                      <span className="text-[22px] font-semibold text-text-primary">
                         {featured.rating}
                       </span>
                     </div>
                     <div
-                      className="w-px h-8 mx-1"
-                      style={{ backgroundColor: "var(--color-border-light)" }}
+                      className="w-px h-8 mx-1 bg-border-light"
                     />
                     <div>
-                      <p className="text-sm font-medium" style={{ color: "var(--color-text-primary)" }}>
+                      <p className="text-sm font-medium text-text-primary">
                         {featured.name}
                       </p>
-                      <p className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+                      <p className="text-xs text-text-muted">
                         {featured.role}
                       </p>
                     </div>
@@ -199,16 +195,11 @@ export default function SuccessStories() {
             {sideCards.map((card, i) => (
               <div
                 key={i}
-                className="testimonial-side-card flex-1 rounded-[20px] md:rounded-[24px] p-6 md:p-8 flex flex-col justify-between"
-                style={{
-                  backgroundColor: "var(--color-bg-primary)",
-                  border: "1px solid var(--color-border)",
-                }}
+                className="testimonial-side-card flex-1 rounded-[20px] md:rounded-[24px] p-6 md:p-8 flex flex-col justify-between bg-bg-primary border border-border"
               >
                 {/* Quote */}
                 <p
-                  className="font-heading italic text-[18px] md:text-[22px] lg:text-[24px] leading-[1.35] mb-6"
-                  style={{ color: "var(--color-text-primary)" }}
+                  className="font-heading italic text-[18px] md:text-[22px] lg:text-[24px] leading-[1.35] mb-6 text-text-primary"
                 >
                   &ldquo;{card.quote}&rdquo;
                 </p>
@@ -225,16 +216,16 @@ export default function SuccessStories() {
                       />
                     </div>
                     <div>
-                      <p className="text-sm font-medium" style={{ color: "var(--color-text-primary)" }}>
+                      <p className="text-sm font-medium text-text-primary">
                         {card.name}
                       </p>
-                      <p className="text-xs font-medium" style={{ color: "#5B8C7B" }}>
+                      <p className="text-xs font-medium text-[#5B8C7B]">
                         {card.role}
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <span className="text-xs" style={{ color: "var(--color-text-muted)" }}>
+                    <span className="text-xs text-text-muted">
                       {card.date}
                     </span>
                     <QuoteIcon className="text-[var(--color-border-light)] w-8 h-8 md:w-10 md:h-10" />

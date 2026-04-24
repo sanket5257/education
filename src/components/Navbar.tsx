@@ -72,7 +72,7 @@ export default function Navbar({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center gap-2 relative z-[60]">
             <Image
-              src="https://static.vecteezy.com/system/resources/previews/046/487/447/non_2x/education-logo-illustration-black-and-white-free-vector.jpg"
+              src="/images/navbar/logo.jpg"
               alt="Vidya Bharati Logo"
               width={60}
               height={60}
@@ -142,14 +142,8 @@ export default function Navbar({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
       {mobileMenuOpen && (
         <div
           ref={overlayRef}
-          className="fixed left-0 right-0 bottom-0 z-[55] flex flex-col lg:hidden"
-          style={{
-            top: 0,
-            height: "100dvh",
-            backgroundColor: "var(--color-bg-primary)",
-            clipPath: "inset(0 0 100% 0)",
-            paddingTop: 76,
-          }}
+          className="fixed left-0 right-0 bottom-0 z-[55] flex flex-col lg:hidden top-0 h-dvh bg-bg-primary pt-[76px]"
+          style={{ clipPath: "inset(0 0 100% 0)" }}
         >
           {/* Nav Links */}
           <div className="flex-1 min-h-0 flex flex-col justify-center px-8 md:px-12 overflow-y-auto py-4">
@@ -158,11 +152,8 @@ export default function Navbar({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="nav-link-item group flex items-baseline justify-between py-2.5 md:py-4"
-                  style={{
-                    borderBottom: i < navLinks.length - 1 ? "1px solid var(--color-border-light)" : "none",
-                    opacity: 0,
-                  }}
+                  className={`nav-link-item group flex items-baseline justify-between py-2.5 md:py-4 ${i < navLinks.length - 1 ? "border-b border-border-light" : ""}`}
+                  style={{ opacity: 0 }}
                   onClick={handleLinkClick}
                 >
                   <span className="font-heading text-[28px] md:text-[48px] leading-[1.15] transition-all duration-300 group-hover:translate-x-3">
@@ -177,8 +168,7 @@ export default function Navbar({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-50 group-hover:translate-x-0"
-                    style={{ color: "var(--color-text-muted)" }}
+                    className="opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-50 group-hover:translate-x-0 text-text-muted"
                   >
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
@@ -191,26 +181,16 @@ export default function Navbar({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
           {/* Footer area */}
           <div className="shrink-0 px-8 md:px-12 pb-6 md:pb-10">
             <div
-              className="nav-divider mb-4 md:mb-6"
-              style={{
-                height: 1,
-                backgroundColor: "var(--color-border-light)",
-                transformOrigin: "left center",
-              }}
+              className="nav-divider mb-4 md:mb-6 h-px bg-border-light origin-left"
             />
             <div className="nav-footer flex items-center justify-between gap-4" style={{ opacity: 0 }}>
               <p
-                className="text-[10px] md:text-xs uppercase tracking-widest"
-                style={{ color: "var(--color-text-muted)" }}
+                className="text-[10px] md:text-xs uppercase tracking-widest text-text-muted"
               >
                 Vidya Bharati International
               </p>
               <button
-                className="shrink-0 text-sm font-medium px-5 py-2.5 md:px-6 md:py-3 rounded-full cursor-pointer transition-colors duration-300"
-                style={{
-                  backgroundColor: "var(--color-bg-dark)",
-                  color: "var(--color-text-light)",
-                }}
+                className="shrink-0 text-sm font-medium px-5 py-2.5 md:px-6 md:py-3 rounded-full cursor-pointer transition-colors duration-300 bg-bg-dark text-text-light"
                 onClick={() => { closeMenu(); setTimeout(() => onEnquiryOpen?.(), 450); }}
               >
                 Enquire Now

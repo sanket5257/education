@@ -58,7 +58,7 @@ export default function Principal() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-14 items-center">
           {/* Left - Image */}
           <div className="principal-image lg:col-span-2">
-            <div className="relative overflow-hidden rounded-[6px]" style={{ aspectRatio: "3 / 4" }}>
+            <div className="relative overflow-hidden rounded-[6px] aspect-[3/4]">
               <Image
                 src="/images/people/people4.jpg"
                 alt="Dr. Ananya Sharma - Principal, Vidya Bharati International School"
@@ -66,8 +66,7 @@ export default function Principal() {
                 className="object-cover"
               />
               {/* Name card overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6"
-                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7), transparent)" }}
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/70 to-transparent"
               >
                 <p className="font-heading text-[20px] md:text-[24px] text-white leading-tight">
                   Dr. Ananya Sharma
@@ -92,7 +91,7 @@ export default function Principal() {
 
             <div className="pt-6" />
 
-            <div className="flex flex-col gap-4" style={{ fontSize: 16, lineHeight: 1.7, color: "var(--color-text-muted)" }}>
+            <div className="flex flex-col gap-4 text-base leading-[1.7] text-text-muted">
               <p>
                 Dear Parents and Students,
               </p>
@@ -112,7 +111,7 @@ export default function Principal() {
               <p>
                 I invite you to visit our campus and experience the Vidya Bharati difference firsthand.
               </p>
-              <p className="font-medium" style={{ color: "var(--color-text-primary)" }}>
+              <p className="font-medium text-text-primary">
                 — Dr. Ananya Sharma, Principal
               </p>
             </div>
@@ -126,13 +125,12 @@ export default function Principal() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-[6px] p-3 md:p-4 text-center"
-                  style={{ backgroundColor: "var(--color-bg-secondary)", border: "0.8px solid var(--color-border-light)" }}
+                  className="rounded-[6px] p-3 md:p-4 text-center bg-bg-secondary border-[0.8px] border-border-light"
                 >
                   <p className="font-heading text-[18px] md:text-[22px] leading-tight">
                     {stat.value}
                   </p>
-                  <p className="text-xs mt-1" style={{ color: "var(--color-text-muted)" }}>
+                  <p className="text-xs mt-1 text-text-muted">
                     {stat.label}
                   </p>
                 </div>

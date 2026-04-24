@@ -83,8 +83,7 @@ export default function Benefits() {
     <section
       id="benefits"
       ref={sectionRef}
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      className="section-padding bg-bg-secondary"
     >
       <div className="container">
         {/* Header */}
@@ -96,13 +95,7 @@ export default function Benefits() {
             Built for{" "}
             <em className="italic">student</em> success.
           </h2>
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.6,
-              color: "var(--color-text-muted)",
-            }}
-          >
+          <p className="text-base leading-[1.6] text-text-muted">
             Everything at Vidya Bharati International School is designed with one
             goal — helping every student thrive academically, socially, and personally
             while staying rooted in Indian values.
@@ -114,15 +107,10 @@ export default function Benefits() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="benefits-feature rounded-[12px] p-5 md:p-8 flex flex-col items-center text-center"
-              style={{
-                backgroundColor: "var(--color-bg-primary)",
-                border: "0.8px solid var(--color-border-light)",
-              }}
+              className="benefits-feature rounded-[12px] p-5 md:p-8 flex flex-col items-center text-center bg-bg-primary border-[0.8px] border-border-light"
             >
               <div
-                className="relative overflow-hidden rounded-full mb-6"
-                style={{ width: 64, height: 64 }}
+                className="relative overflow-hidden rounded-full mb-6 w-16 h-16"
               >
                 <Image
                   src={feature.icon}
@@ -136,13 +124,7 @@ export default function Benefits() {
               >
                 {feature.title}
               </h3>
-              <p
-                style={{
-                  fontSize: 15,
-                  lineHeight: 1.6,
-                  color: "var(--color-text-muted)",
-                }}
-              >
+              <p className="text-[15px] leading-[1.6] text-text-muted">
                 {feature.description}
               </p>
             </div>
@@ -154,25 +136,14 @@ export default function Benefits() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="benefits-stat rounded-[12px] p-4 md:p-6 text-center"
-              style={{
-                backgroundColor: "var(--color-bg-dark)",
-              }}
+              className="benefits-stat rounded-[12px] p-4 md:p-6 text-center bg-bg-dark"
             >
               <p
-                className="font-heading text-[24px] md:text-[36px] leading-[1.1] mb-1"
-                style={{
-                  color: "var(--color-text-light)",
-                }}
+                className="font-heading text-[24px] md:text-[36px] leading-[1.1] mb-1 text-text-light"
               >
                 {stat.value}
               </p>
-              <p
-                style={{
-                  fontSize: 13,
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
+              <p className="text-[13px] text-white/50">
                 {stat.label}
               </p>
             </div>

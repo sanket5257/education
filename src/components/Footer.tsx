@@ -42,13 +42,9 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
 
   return (
     <footer
+      className="bg-[#222222] text-[#FFFDF9] bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundColor: "#222222",
-        color: "#FFFDF9",
-        backgroundImage: "url('https://cdn.prod.website-files.com/68b824698be8e7c047a5da51/68d146cd1071e5af0979534f_aventiva-footer-one-background.avif')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundImage: "url('/images/footer/footer-bg.avif')",
       }}
     >
       {/* Main footer content */}
@@ -57,27 +53,14 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
       >
         {/* ── Top Banner ── */}
         <div
-          className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between"
-          style={{
-            paddingBottom: 48,
-            borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-          }}
+          className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between pb-12 border-b border-white/10"
         >
           {/* Left: Text + Button */}
-          <div className="flex flex-col gap-6" style={{ maxWidth: 520 }}>
+          <div className="flex flex-col gap-6 max-w-[520px]">
             <p
-              className="text-[18px] md:text-[24px]"
-              style={{
-                fontFamily: "var(--font-body)",
-                lineHeight: 1.4,
-                color: "#FFFFFF",
-              }}
+              className="text-[18px] md:text-[24px] font-body leading-[1.4] text-white"
             >
-              <em
-                style={{
-                  fontFamily: '"Libre Caslon Condensed", Georgia, serif',
-                  fontStyle: "italic",
-                }}
+              <em className="font-heading italic"
               >
                 A nurturing environment
               </em>{" "}
@@ -94,22 +77,11 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
 
         {/* ── Navigation Columns ── */}
         <div
-          className="grid grid-cols-2 gap-10 pt-12 md:grid-cols-4"
-          style={{ paddingBottom: 48 }}
+          className="grid grid-cols-2 gap-10 pt-12 md:grid-cols-4 pb-12"
         >
           {/* Column 1: Quick Links */}
           <div>
-            <h4
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 14,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                color: "rgba(255, 255, 255, 0.6)",
-                marginBottom: 16,
-                letterSpacing: "0.05em",
-              }}
-            >
+            <h4 className="font-body text-sm font-semibold uppercase text-white/60 mb-4 tracking-[0.05em]">
               Quick Links
             </h4>
             <ul className="flex flex-col gap-3">
@@ -117,19 +89,7 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="transition-colors"
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: 14,
-                      color: "rgba(255, 255, 255, 0.8)",
-                      transitionDuration: "var(--transition-base)",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "#FFFFFF")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)")
-                    }
+                    className="font-body text-sm text-white/80 transition-colors duration-300 hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -140,17 +100,7 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
 
           {/* Column 2: Explore */}
           <div>
-            <h4
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 14,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                color: "rgba(255, 255, 255, 0.6)",
-                marginBottom: 16,
-                letterSpacing: "0.05em",
-              }}
-            >
+            <h4 className="font-body text-sm font-semibold uppercase text-white/60 mb-4 tracking-[0.05em]">
               Explore
             </h4>
             <ul className="flex flex-col gap-3">
@@ -158,19 +108,7 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="transition-colors"
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: 14,
-                      color: "rgba(255, 255, 255, 0.8)",
-                      transitionDuration: "var(--transition-base)",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "#FFFFFF")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)")
-                    }
+                    className="font-body text-sm text-white/80 transition-colors duration-300 hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -181,17 +119,7 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
 
           {/* Column 3: Contact */}
           <div>
-            <h4
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 14,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                color: "rgba(255, 255, 255, 0.6)",
-                marginBottom: 16,
-                letterSpacing: "0.05em",
-              }}
-            >
+            <h4 className="font-body text-sm font-semibold uppercase text-white/60 mb-4 tracking-[0.05em]">
               Contact
             </h4>
             <ul className="flex flex-col gap-3">
@@ -199,19 +127,7 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="transition-colors"
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: 14,
-                      color: "rgba(255, 255, 255, 0.8)",
-                      transitionDuration: "var(--transition-base)",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "#FFFFFF")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "rgba(255, 255, 255, 0.8)")
-                    }
+                    className="font-body text-sm text-white/80 transition-colors duration-300 hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -222,32 +138,13 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
 
           {/* Column 4: Connect + Newsletter */}
           <div>
-            <h4
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 14,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                color: "rgba(255, 255, 255, 0.6)",
-                marginBottom: 16,
-                letterSpacing: "0.05em",
-              }}
-            >
+            <h4 className="font-body text-sm font-semibold uppercase text-white/60 mb-4 tracking-[0.05em]">
               Connect
             </h4>
 
             {/* Newsletter */}
-            <div style={{ marginTop: 24 }}>
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 14,
-                  fontWeight: 600,
-                  color: "rgba(255, 255, 255, 0.6)",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em",
-                  marginBottom: 12,
-                }}
+            <div className="mt-6">
+              <p className="font-body text-sm font-semibold uppercase text-white/60 mb-4 tracking-[0.05em]"
               >
                 Subscribe to our newsletter
               </p>
@@ -258,33 +155,11 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  style={{
-                    flex: 1,
-                    padding: "10px 14px",
-                    borderRadius: 6,
-                    border: "none",
-                    backgroundColor: "#333333",
-                    color: "#FFFFFF",
-                    fontFamily: "var(--font-body)",
-                    fontSize: 14,
-                    outline: "none",
-                  }}
+                  className="flex-1 py-2.5 px-3.5 rounded-md border-none bg-[#333333] text-white font-body text-sm outline-none"
                 />
                 <button
                   type="submit"
-                  className="shrink-0 transition-opacity hover:opacity-80"
-                  style={{
-                    padding: "10px 16px",
-                    borderRadius: 6,
-                    border: "none",
-                    backgroundColor: "#FFFFFF",
-                    color: "#222222",
-                    fontFamily: "var(--font-body)",
-                    fontSize: 14,
-                    fontWeight: 500,
-                    cursor: "pointer",
-                    transitionDuration: "var(--transition-base)",
-                  }}
+                  className="shrink-0 transition-opacity hover:opacity-80 py-2.5 px-4 rounded-md border-none bg-white text-[#222222] font-body text-sm font-medium cursor-pointer duration-300"
                 >
                   Send
                 </button>
@@ -295,25 +170,11 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
 
         {/* ── CBSE Affiliation + Map ── */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
-          style={{
-            paddingBottom: 32,
-            borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start pb-8 border-b border-white/10"
         >
           {/* CBSE Affiliation Details */}
           <div>
-            <h4
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 14,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                color: "rgba(255, 255, 255, 0.6)",
-                marginBottom: 16,
-                letterSpacing: "0.05em",
-              }}
-            >
+            <h4 className="font-body text-sm font-semibold uppercase text-white/60 mb-4 tracking-[0.05em]">
               Affiliation &amp; Recognition
             </h4>
             <div className="flex flex-col gap-3">
@@ -325,10 +186,10 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
                 { label: "Classes", value: "Nursery to XII" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-2">
-                  <span style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", minWidth: 140 }}>
+                  <span className="text-xs text-white/40 min-w-[140px]">
                     {item.label}
                   </span>
-                  <span style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", fontWeight: 500 }}>
+                  <span className="text-[13px] text-white/80 font-medium">
                     {item.value}
                   </span>
                 </div>
@@ -337,12 +198,12 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
           </div>
 
           {/* Map */}
-          <div className="rounded-[6px] overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
+          <div className="rounded-[6px] overflow-hidden aspect-video">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.0!2d77.03!3d28.46!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzM2LjAiTiA3N8KwMDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+              className="border-0 invert-[.9] hue-rotate-180"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -353,19 +214,10 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
 
         {/* ── Bottom Bar ── */}
         <div
-          className="flex flex-col items-center justify-between gap-4 md:flex-row"
-          style={{
-            paddingTop: 24,
-            borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-          }}
+          className="flex flex-col items-center justify-between gap-4 md:flex-row pt-6 border-t border-white/10"
         >
           {/* Left: Copyright */}
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: 12,
-              color: "rgba(255, 255, 255, 0.5)",
-            }}
+          <p className="font-body text-xs text-white/50"
           >
             &copy; 2026 Vidya Bharati International School. All rights reserved.
           </p>
@@ -377,11 +229,7 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
                 key={icon.alt}
                 href={icon.href}
                 aria-label={icon.alt}
-                className="transition-opacity hover:opacity-100"
-                style={{
-                  opacity: 0.6,
-                  transitionDuration: "var(--transition-base)",
-                }}
+                className="transition-opacity hover:opacity-100 opacity-60 duration-300"
               >
                 <Image
                   src={icon.src}
@@ -395,14 +243,8 @@ export default function Footer({ onEnquiryOpen }: { onEnquiryOpen?: () => void }
         </div>
 
         {/* ── Legal Disclaimer ── */}
-        <div style={{ marginTop: 24 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: 10,
-              lineHeight: 1.6,
-              color: "rgba(255, 255, 255, 0.3)",
-            }}
+        <div className="mt-6">
+          <p className="font-body text-[10px] leading-[1.6] text-white/30"
           >
             The information provided on this website is for general
             informational purposes only and does not constitute professional

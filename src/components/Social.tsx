@@ -31,8 +31,7 @@ export default function Social() {
     <section
       id="social"
       ref={sectionRef}
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-bg-secondary)" }}
+      className="section-padding bg-bg-secondary"
     >
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -43,8 +42,7 @@ export default function Social() {
               title="Vidya Bharati International School"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              className="w-full h-full"
-              style={{ border: 0 }}
+              className="w-full h-full border-0"
             />
           </div>
 
@@ -56,13 +54,7 @@ export default function Social() {
               See Our Campus <em className="italic">Come Alive</em>
             </h2>
             <p
-              className="social-fade mt-4"
-              style={{
-                fontSize: 16,
-                color: "var(--color-text-muted)",
-                maxWidth: 460,
-                lineHeight: 1.6,
-              }}
+              className="social-fade mt-4 text-base text-text-muted max-w-[460px] leading-[1.6]"
             >
               Watch campus tours, student stories, and event highlights on our
               YouTube channel. Follow us on Instagram for daily glimpses of life
@@ -76,22 +68,18 @@ export default function Social() {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-full px-5 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
-                style={{
-                  backgroundColor: "var(--color-bg-dark)",
-                  color: "var(--color-text-light)",
-                }}
+                className="group flex items-center gap-3 rounded-full px-5 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md bg-bg-dark text-text-light"
               >
                 <svg
                   width="22"
                   height="22"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="shrink-0"
+                  className="shrink-0 text-white"
                 >
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
-                <span className="text-[14px] font-medium">Subscribe on YouTube</span>
+                <span className="text-[14px] text-white font-medium">Subscribe on YouTube</span>
               </Link>
 
               {/* Instagram */}
@@ -99,12 +87,7 @@ export default function Social() {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-full px-5 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
-                style={{
-                  border: "1px solid var(--color-border-light)",
-                  backgroundColor: "var(--color-bg-primary)",
-                  color: "var(--color-text-primary)",
-                }}
+                className="group flex items-center gap-3 rounded-full px-5 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md border border-border-light bg-bg-primary text-text-primary"
               >
                 <svg
                   width="20"

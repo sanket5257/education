@@ -89,8 +89,8 @@ export default function Services() {
                 >
                   {/* Icon */}
                   <div
-                    className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full"
-                    style={{ background: service.gradient, color: "#FFFFFF" }}
+                    className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full text-white"
+                    style={{ background: service.gradient }}
                   >
                     <Icon size={22} strokeWidth={1.5} fill="currentColor" />
                   </div>

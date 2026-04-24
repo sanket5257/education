@@ -78,13 +78,11 @@ export default function About() {
         {/* Left Column - Image composition */}
         <div
           ref={imageRef}
-          className="relative"
-          style={{ overflow: "visible" }}
+          className="relative overflow-visible"
         >
           {/* Main photo - offset left 10%, 90% width like reference */}
           <div
-            className="relative ml-0 md:ml-12 overflow-hidden w-full md:w-[80%]"
-            style={{ borderRadius: 32, aspectRatio: "598 / 700" }}
+            className="relative ml-0 md:ml-12 overflow-hidden w-full md:w-[80%] rounded-[32px] aspect-[598/700]"
           >
             <Image
               src="/images/lifestyle/about-hero.jpg"
@@ -100,8 +98,7 @@ export default function About() {
             alt="Child's drawing"
             width={200}
             height={200}
-            className="absolute hidden lg:block pointer-events-none"
-            style={{ top: "-10%", left: "62%", width: "40%", height: "auto", transform: "rotate(-15deg)" }}
+            className="absolute hidden lg:block pointer-events-none top-[-10%] left-[62%] w-[40%] h-auto -rotate-[15deg]"
           />
 
           {/* Pink SVG - bottom right, extending below */}
@@ -110,8 +107,7 @@ export default function About() {
             alt=""
             width={300}
             height={307}
-            className="absolute hidden lg:block pointer-events-none"
-            style={{ bottom: "-14%", left: "68%", width: "45%", height: "auto" }}
+            className="absolute hidden lg:block pointer-events-none bottom-[-14%] left-[68%] w-[45%] h-auto"
           />
 
           {/* Light SVG - bottom left */}
@@ -120,8 +116,7 @@ export default function About() {
             alt=""
             width={160}
             height={160}
-            className="absolute hidden lg:block pointer-events-none"
-            style={{ bottom: "-2%", left: "-4%", width: "24%", height: "auto" }}
+            className="absolute hidden lg:block pointer-events-none bottom-[-2%] left-[-4%] w-[24%] h-auto"
           />
         </div>
 
@@ -140,13 +135,7 @@ export default function About() {
 
           <div className="pt-6" />
 
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.5,
-              color: "var(--color-text-muted)",
-            }}
-          >
+          <p className="text-base leading-normal text-text-muted">
             Established in 1995, Vidya Bharati International School has spent
             nearly three decades preparing young minds for the future. Our mission
             is to foster curiosity, integrity, and resilience in every student
@@ -165,11 +154,7 @@ export default function About() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="flex gap-1.5 p-4"
-                style={{
-                  borderTop: "0.8px solid #f5f4f4",
-                  borderBottom: "0.8px solid #f5f4f4",
-                }}
+                className="flex gap-1.5 p-4 border-y-[0.8px] border-[#f5f4f4]"
               >
                 <Image
                   src={feature.icon}
@@ -180,21 +165,11 @@ export default function About() {
                 />
                 <div>
                   <p
-                    className="font-medium"
-                    style={{
-                      fontSize: 14,
-                      color: "var(--color-text-primary)",
-                    }}
+                    className="font-medium text-sm text-text-primary"
                   >
                     {feature.title}
                   </p>
-                  <p
-                    style={{
-                      fontSize: 16,
-                      lineHeight: 1.5,
-                      color: "var(--color-text-muted)",
-                    }}
-                  >
+                  <p className="text-base leading-normal text-text-muted">
                     {feature.description}
                   </p>
                 </div>

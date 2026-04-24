@@ -26,51 +26,51 @@ const teachers = [
     name: "Dr. Meena Sharma",
     role: "Principal & Academic Director",
     image:
-      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/69a079c57f78e54a7ff4f74d_Team-img-1.avif",
+      "/images/about/team-1.avif",
   },
   {
     name: "Rajiv Kulkarni",
     role: "Head of Science Department",
     image:
-      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/69a07a2d4587a665e363bb98_Team-img-2.avif",
+      "/images/about/team-2.avif",
   },
   {
     name: "Sunita Deshmukh",
     role: "Senior Mathematics Faculty",
     image:
-      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/69a07aadfae1410f270699f0_Team-img-3.avif",
+      "/images/about/team-3.avif",
   },
   {
     name: "Arjun Nair",
     role: "Sports & Physical Education",
     image:
-      "https://cdn.prod.website-files.com/699ecb25b836198626ab38ee/69a07b60cc1ab8213b1fddd7_Team-img-4.avif",
+      "/images/about/team-4.avif",
   },
 ];
 
 const values = [
   {
-    icon: "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a083f45eb03f4131837fda_Values-Icon-1.svg",
+    icon: "/images/about/values-icon-1.svg",
     title: "Academic Excellence",
     desc: "Rigorous CBSE curriculum preparing students for competitive success.",
   },
   {
-    icon: "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a0845e904553df3a307204_Values-Icon-2.svg",
+    icon: "/images/about/values-icon-2.svg",
     title: "Indian Values",
     desc: "Character building rooted in Indian culture and traditions.",
   },
   {
-    icon: "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/699f335f65a82640943031b4_Benefits-Right-Icon-2.svg",
+    icon: "/images/about/values-icon-benefit.svg",
     title: "Respect & Discipline",
     desc: "Students learn empathy, responsibility, and self-discipline.",
   },
   {
-    icon: "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a085bb5cd802b816e1ce89_Values-Icon-3.svg",
+    icon: "/images/about/values-icon-3.svg",
     title: "Innovation & Curiosity",
     desc: "Encouraging creative thinking and scientific temperament.",
   },
   {
-    icon: "https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a0867aba0d3b258eed1c34_Values-Icon-4.svg",
+    icon: "/images/about/values-icon-4.svg",
     title: "Confidence & Leadership",
     desc: "Students develop self-belief and leadership through holistic activities.",
   },
@@ -157,7 +157,7 @@ export default function AboutPage() {
               {/* Left - abstract image */}
               <div className="relative rounded-[20px] overflow-hidden min-h-[300px] md:min-h-[400px]">
                 <Image
-                  src="https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a01883a1a82bffd44cbb08_About-Futuer-1.avif"
+                  src="/images/about/about-future-1.avif"
                   alt="Abstract colourful shapes"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -167,7 +167,7 @@ export default function AboutPage() {
               {/* Center - kids photo */}
               <div className="relative rounded-[20px] overflow-hidden min-h-[300px] md:min-h-[400px]">
                 <Image
-                  src="https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a01a583fe32c50fb497dd9_About-Futuer-2.avif"
+                  src="/images/about/about-future-2.avif"
                   alt="Children laughing together"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -180,7 +180,7 @@ export default function AboutPage() {
                 style={{ backgroundColor: "#E8EDF4" }}
               >
                 <Image
-                  src="https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a0110b489740a90d745477_header-shap-3.svg"
+                  src="/images/about/header-shape-3.svg"
                   alt=""
                   fill
                   className="object-cover opacity-30"
@@ -194,7 +194,7 @@ export default function AboutPage() {
                         style={{ borderBottom: i < 3 ? "1px solid rgba(0,0,0,0.08)" : "none", paddingBottom: i < 3 ? 16 : 0 }}
                       >
                         <Image
-                          src={`https://cdn.prod.website-files.com/699be0e75716a900f327fd95/699e7${["d0e7f7743fccedbfbbf_Features-Item-icon-1", "e38ec89410bb22cf164_Features-Item-icon-2", "e56a352a4511d77d14a_Features-Item-icon-3", "e76f37ae2dc26e08094_Features-Item-icon-4"][i]}.svg`}
+                          src={`/images/about/features-icon-${i + 1}.svg`}
                           alt=""
                           width={24}
                           height={24}
@@ -250,7 +250,7 @@ export default function AboutPage() {
             {/* Left - Image */}
             <div className="relative rounded-[20px] overflow-hidden min-h-[400px] md:min-h-[540px]">
               <Image
-                src="https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a06f96e21827892b37d78a_1ba48b143f90d746b8ecfe8027ad9298_Mission-Img.avif"
+                src="/images/about/mission.avif"
                 alt="Students walking outside school"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -386,7 +386,7 @@ export default function AboutPage() {
             {/* Right - Portrait image with quote */}
             <div className="relative rounded-[20px] overflow-hidden min-h-[500px] md:min-h-[640px]">
               <Image
-                src="https://cdn.prod.website-files.com/699be0e75716a900f327fd95/69a081c01f1c6ea90247e00e_Values-Img.avif"
+                src="/images/about/values.avif"
                 alt="School chairman"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -427,7 +427,7 @@ export default function AboutPage() {
               style={{ minHeight: 400 }}
             >
               <Image
-                src="https://i.pinimg.com/1200x/be/e7/a1/bee7a18617a66cc64ea30640b570e9d9.jpg"
+                src="/images/about/campus.jpg"
                 alt="Students at Vidya Bharati"
                 fill
                 sizes="100vw"
